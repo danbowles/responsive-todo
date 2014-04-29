@@ -1,6 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1>Hi!</h1>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <!-- TODO - don't use codepen -->
+    <link rel="stylesheet" href="http://s.codepen.io/assets/reset/normalize.css">
+    <link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet" type="text/css">
+    <link href="stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>-->
+  </head>
+  <body>
+    <section id="mainApp" class="ng-scope">
+      <header>
+        <a href="#" class="go-to-nav">
+          <img src="http://files.danbowles.com/assets/svg/hamburger-icon.svg">
+        </a>
+        <nav>
+          <ul>
+            <li><a class="all is-active" href="#">All Tasks<span>24</span></a></li>
+            <li><a class="incomplete" href="#">Incomplete<span>12</span></a></li>
+            <li><a class="complete" href="#">Completed<span>12</span></a></li>
+          </ul>
+        </nav>
+        <h1 class="list-title">to do list</h1>
+      </header>
+      <div class="list-content">
+        <section class="ng-scope">
+          <h3><span class="ng-binding">Must Do No Matter What</span></h3>
+          <h5 class="ng-scope">completed?</h5>
+          <ol>
+            <li class="ng-scope">
+              <span class="ng-binding">Take out garbage</span>
+              <div class="done-checkbox">
+                <input type="checkbox" id="todo-00" class="ng-pristine ng-valid">
+                <label for="todo-00"></label>
+              </div>
+            </li>
+            <li class="ng-scope">
+              <span class="ng-binding">random letters</span>
+              <div class="done-checkbox">
+                <input type="checkbox" id="todo-01" class="ng-pristine ng-valid">
+                <label for="todo-01"></label>
+              </div>
+            </li>
+            <li class="ng-scope">
+              <span class="ng-binding">words and such</span>
+              <div class="done-checkbox">
+                <input type="checkbox" id="todo-02" class="ng-pristine ng-valid">
+                <label for="todo-02"></label>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </section>
+  </body>
 </html>
