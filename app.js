@@ -9,6 +9,7 @@ var methodOverride  = require('method-override');
 
 // TODO database
 // TODO routes
+var routes = require('./routes/index');
 
 var app = express();
 
@@ -22,12 +23,16 @@ app.use(cookieParser());
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
+app.use('/', routes);
+
+// 404 Error page setup
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
+// Error page + Stacktrace for dev
 if (app.get('env') == 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -38,6 +43,7 @@ if (app.get('env') == 'development') {
   });
 }
 
+// Production Error page
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
