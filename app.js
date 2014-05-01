@@ -22,11 +22,29 @@ app.use(cookieParser());
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
-// TODO - move to 'www' or similar file
-var ipaddr  = process.env.OPENSHIFT_NODEJS_IP || process.env.IP;
-var port    = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT;
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
-app.listen(port, ipaddr);
-console.log('Started. Listening on ' + ipaddr + ':' + port);
-// end TODO
+if (app.get('env') == 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
 
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
+
+module.exports = app;
