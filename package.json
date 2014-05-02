@@ -2,7 +2,7 @@
   "name": "responsive",
   "version": "0.0.0",
   "description": "Simple todo list app used as a project to learn",
-  "main": "node ./bin/www",
+  "main": "./bin/www",
   "repository": "",
   "author": "Dan Bowles",
   "dependencies": {
