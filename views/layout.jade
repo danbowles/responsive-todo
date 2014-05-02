@@ -1,10 +1,18 @@
 doctype html
 html
   head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='initial-scale=1')
     title= title
+    // TODO - don't use CodePen for Normalize
+    link(rel='stylesheet', href='http://s.codepen.io/assets/reset/normalize.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Rokkitt:400,700')
     link(rel='stylesheet', href='stylesheets/styles.css')
   body(ng-app='respTodo')
-    block content
-  // TODO - angular
-  // TODO - jquery
-  // TODO - app
+    section(id='mainApp', ng-controller='TodoCtrl')
+      include header
+      block content
+      
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js')
+    script(src='scripts/app.js')
