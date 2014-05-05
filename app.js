@@ -8,7 +8,7 @@ var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 
 // TODO database
-// TODO routes
+var todoList = require('./routes/todoList');
 var routes = require('./routes/index');
 
 var app = express();
@@ -24,6 +24,7 @@ app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', routes);
+app.use('/api', todoList);
 
 // 404 Error page setup
 app.use(function(req, res, next) {
