@@ -1,0 +1,135 @@
+.go-to-nav {
+  display: none;
+  
+  a {
+    display: inline-block;
+    padding: 5px;
+    background: $nav-hamburger-background;
+    @include border-radius(3em);
+    
+    img {
+      vertical-align: middle;
+    }
+  }
+  
+  .show-nav & img {
+    @include transform(rotate(90deg));
+  }
+  
+  @media(max-width: $bp-narrow-plus-1) {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    background: rgba(#eeeeee, 1);
+    border-bottom: 1px solid $primary-border-color;
+    padding: 4px 5px;
+    display: block;
+  }
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  top: 51px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid $primary-border-color;
+  background: #eeeeee;
+  display: none;
+
+  .show-nav & {
+    display: block;
+    @include box-shadow(0 3px 8px rgba(#000000,.15));
+  }
+  
+  
+  @media(min-width: $bp-narrow-plus-1) {
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    display: block;
+    @include box-shadow(0 3px 8px rgba(#000000,.15));
+  }
+  
+  ul {
+    margin: 0 auto;
+    
+    @media(min-width: $bp-narrow-plus-1) {
+      max-width: 550px;
+    }
+  }
+  
+  li {
+    a {
+      display: block;
+      position: relative;
+      color: $primary-border-color;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 2.5em;
+      background: #eeeeee;
+      
+      &:hover, &:active {
+        background: darken(#eeeeee, 5%);
+      }
+      
+      // TODO: Make mixin/function to abstract
+      //       out nav filter css
+      &.complete {
+        background: $list-primary-color;
+        color: white;
+        
+        &:hover, &:active {
+          background: darken($list-primary-color, 6%);
+        }
+      }
+      
+      &.incomplete {
+        background: $list-secondary-color;
+        color: white;
+        
+        &:hover, &:active {
+          background: darken($list-secondary-color, 6%);
+        }
+      }
+      
+      //is-active
+      
+      &.all {
+        background: #eeeeee;
+        color: $primary-border-color;
+        
+        &:hover, &:active {
+          background: darken(#eeeeee, 6%);
+        }
+        
+        &.is-active {
+          background: white;
+          
+          & span {
+            background: #eeeeee;
+          }
+        }
+      }
+      
+      & span {
+        margin-left: 10px;
+        font-family: sans-serif;
+        font-size: .7em;
+        font-weight: bold;
+        display: inline-block;
+        padding: 4px;
+        background: white;
+        color: $primary-border-color;
+        line-height: 1em;
+      }
+    }
+    
+    @media (min-width: $bp-narrow-plus-1) {
+      float: left;
+      width: 33.333333333%;
+    }
+  }
+}

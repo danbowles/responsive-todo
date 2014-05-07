@@ -1,0 +1,107 @@
+.list-content {
+  padding: 0 2%;
+  margin-bottom: 2em;
+  
+  @media (min-width: $bp-narrow) {
+    padding: 0 4%;
+  }
+  
+  h3 {
+    border: 2px solid $primary-border-color;
+    border-width: 2px 0;
+    color: $list-secondary-color;
+    text-align: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    
+    @media (min-width: $bp-narrow) {
+      font-size: 1.5em;
+    }
+    
+    span {
+      margin: 2px 0;
+      padding: 6px 0;
+      display: block;
+      border: 1px dashed $secondary-border-color;
+      border-width: 1px 0;
+    }
+  }
+  
+  h5 {
+    color: $primary-border-color;
+    margin: -12px 0 2px;
+    text-align: right;
+  }
+  
+  ol {
+    margin: 0;
+    padding: 0;
+    counter-reset: counter;
+  
+    > li {
+      position: relative;
+      padding: 12px 12px 0;
+      margin-bottom: 5px;
+      
+      &:before {
+        position: relative;
+        background: $list-secondary-color;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        @include border-radius(2em);
+        @include box-shadow(0 5px 0 lighten($list-secondary-color,30%));
+        display: inline-block;
+        counter-increment: counter;
+        content: counter(counter, decimal-leading-zero);
+        margin-right: 1em;
+        float: left;
+      }
+      
+      span {
+        border-bottom: 1px solid #99A3A5;
+        display: block;
+        margin: 0 2.5em;
+        padding: 10px;
+      }
+      input[type=checkbox] {
+        visibility: hidden;
+      }
+      
+      label {
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        height: 30px;
+        width: 30px;
+        right: 9px;
+        top: 9px;
+        border: 3px solid $list-secondary-color;
+        background: transparent;
+        
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 17px;
+          width: 6px;
+          right: 9px;
+          top: 2px;
+          @include rotate(45deg);
+          border: 2px solid $list-primary-color;
+          border-width: 0 5px 5px 0;
+          background: transparent;
+          opacity: 0;
+        }
+      }
+      
+      input[type=checkbox]:checked + label:after {
+        opacity: 1;
+      }
+    }
+   } // end ol
+}
