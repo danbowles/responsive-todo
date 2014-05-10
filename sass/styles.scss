@@ -1,3 +1,10 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
 // Variables
 $list-primary-color: #838E90;
 $list-secondary-color: #B89335; //complement($list-primary-color);
@@ -5,7 +12,7 @@ $list-secondary-shadow: lighten($list-secondary-color, 25%); //#B1BFC0;
 $primary-border-color: #99A3A5;
 $secondary-border-color: lighten($primary-border-color, 15%);
 
-$add-task-button-background: $list-primary-color;
+$add-task-button-background: $list-secondary-color;
 $add-task-button-color: #ffffff;
 
 $nav-hamburger-background: $list-primary-color;
@@ -53,19 +60,33 @@ body {
   #task-entry {
     position: absolute;
     z-index: 1;
-    right: 5px;
-    top: 4px;
     width: 85%;
     text-align: right;
+    right: 0;
     
     button {
+      position: absolute;
+      right: 0;
+      top: 0;
       background: $add-task-button-background;
       color: $add-task-button-color;
-      padding: 0 12px;
+      height: 45px;
+      width: 45px;
       font-weight: bold;
-      line-height: 42px;
       border: none;
-      font-size: 2em;
+      font-size: 1.3em;
+    }
+    
+    input {
+      @include placeholder {
+        color: #555555;
+        font-style: italic;
+      }
+      width: 100%;
+      border: none;
+      padding: 11px 0 12px;
+      background: transparent;
+      @include box-sizing(border-box);
       @include border-radius(2em);
     }
   }

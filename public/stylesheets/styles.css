@@ -245,20 +245,18 @@ ul, ol {
 }
 /* line 4, ../../sass/partials/_navigation.scss */
 .go-to-nav a {
-  display: inline-block;
-  padding: 5px;
+  display: block;
+  height: 45px;
+  width: 45px;
   background: #838e90;
-  -webkit-border-radius: 3em;
-  -moz-border-radius: 3em;
-  -ms-border-radius: 3em;
-  -o-border-radius: 3em;
-  border-radius: 3em;
 }
 /* line 10, ../../sass/partials/_navigation.scss */
 .go-to-nav a img {
   vertical-align: middle;
+  max-width: 80%;
+  margin-left: 3px;
 }
-/* line 15, ../../sass/partials/_navigation.scss */
+/* line 17, ../../sass/partials/_navigation.scss */
 .show-nav .go-to-nav img {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -275,12 +273,11 @@ ul, ol {
     top: 0;
     background: #eeeeee;
     border-bottom: 1px solid #99a3a5;
-    padding: 4px 5px;
     display: block;
   }
 }
 
-/* line 31, ../../sass/partials/_navigation.scss */
+/* line 32, ../../sass/partials/_navigation.scss */
 nav {
   position: absolute;
   left: 0;
@@ -291,7 +288,7 @@ nav {
   background: #eeeeee;
   display: none;
 }
-/* line 41, ../../sass/partials/_navigation.scss */
+/* line 42, ../../sass/partials/_navigation.scss */
 .show-nav nav {
   display: block;
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
@@ -299,7 +296,7 @@ nav {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 @media (min-width: 37.5em) {
-  /* line 31, ../../sass/partials/_navigation.scss */
+  /* line 32, ../../sass/partials/_navigation.scss */
   nav {
     top: 0;
     position: fixed;
@@ -310,17 +307,17 @@ nav {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   }
 }
-/* line 55, ../../sass/partials/_navigation.scss */
+/* line 56, ../../sass/partials/_navigation.scss */
 nav ul {
   margin: 0 auto;
 }
 @media (min-width: 37.5em) {
-  /* line 55, ../../sass/partials/_navigation.scss */
+  /* line 56, ../../sass/partials/_navigation.scss */
   nav ul {
     max-width: 550px;
   }
 }
-/* line 64, ../../sass/partials/_navigation.scss */
+/* line 65, ../../sass/partials/_navigation.scss */
 nav li a {
   display: block;
   position: relative;
@@ -331,46 +328,46 @@ nav li a {
   line-height: 2.5em;
   background: #eeeeee;
 }
-/* line 74, ../../sass/partials/_navigation.scss */
+/* line 75, ../../sass/partials/_navigation.scss */
 nav li a:hover, nav li a:active {
   background: #e1e1e1;
 }
-/* line 80, ../../sass/partials/_navigation.scss */
+/* line 81, ../../sass/partials/_navigation.scss */
 nav li a.complete {
   background: #838e90;
   color: white;
 }
-/* line 84, ../../sass/partials/_navigation.scss */
+/* line 85, ../../sass/partials/_navigation.scss */
 nav li a.complete:hover, nav li a.complete:active {
   background: #737f81;
 }
-/* line 89, ../../sass/partials/_navigation.scss */
+/* line 90, ../../sass/partials/_navigation.scss */
 nav li a.incomplete {
   background: #b89335;
   color: white;
 }
-/* line 93, ../../sass/partials/_navigation.scss */
+/* line 94, ../../sass/partials/_navigation.scss */
 nav li a.incomplete:hover, nav li a.incomplete:active {
   background: #a0802e;
 }
-/* line 100, ../../sass/partials/_navigation.scss */
+/* line 101, ../../sass/partials/_navigation.scss */
 nav li a.all {
   background: #eeeeee;
   color: #99a3a5;
 }
-/* line 104, ../../sass/partials/_navigation.scss */
+/* line 105, ../../sass/partials/_navigation.scss */
 nav li a.all:hover, nav li a.all:active {
   background: #dfdfdf;
 }
-/* line 108, ../../sass/partials/_navigation.scss */
+/* line 109, ../../sass/partials/_navigation.scss */
 nav li a.all.is-active {
   background: white;
 }
-/* line 111, ../../sass/partials/_navigation.scss */
+/* line 112, ../../sass/partials/_navigation.scss */
 nav li a.all.is-active span {
   background: #eeeeee;
 }
-/* line 117, ../../sass/partials/_navigation.scss */
+/* line 118, ../../sass/partials/_navigation.scss */
 nav li a span {
   margin-left: 10px;
   font-family: sans-serif;
@@ -383,7 +380,7 @@ nav li a span {
   line-height: 1em;
 }
 @media (min-width: 37.5em) {
-  /* line 63, ../../sass/partials/_navigation.scss */
+  /* line 64, ../../sass/partials/_navigation.scss */
   nav li {
     float: left;
     width: 33.333333333%;
@@ -514,24 +511,24 @@ nav li a span {
   opacity: 1;
 }
 
-/* line 27, ../../sass/styles.scss */
+/* line 34, ../../sass/styles.scss */
 body {
   background: white;
 }
 @media (min-width: 37.5em) {
-  /* line 27, ../../sass/styles.scss */
+  /* line 34, ../../sass/styles.scss */
   body {
     background: url(http://danbowles.com/sandbox/redesign/images/site-bg.png);
   }
 }
 
-/* line 36, ../../sass/styles.scss */
+/* line 43, ../../sass/styles.scss */
 #mainApp {
   margin: 0 auto;
   background: #ffffff;
 }
 @media (min-width: 37.5em) {
-  /* line 36, ../../sass/styles.scss */
+  /* line 43, ../../sass/styles.scss */
   #mainApp {
     width: 60%;
     margin-top: 60px;
@@ -547,35 +544,67 @@ body {
     box-shadow: 0 0 1px #cfd4d5 inset;
   }
 }
-/* line 49, ../../sass/styles.scss */
+/* line 56, ../../sass/styles.scss */
 #mainApp header {
   position: relative;
 }
-/* line 53, ../../sass/styles.scss */
+/* line 60, ../../sass/styles.scss */
 #mainApp #task-entry {
   position: absolute;
   z-index: 1;
-  right: 5px;
-  top: 4px;
   width: 85%;
   text-align: right;
+  right: 0;
 }
-/* line 61, ../../sass/styles.scss */
+/* line 67, ../../sass/styles.scss */
 #mainApp #task-entry button {
-  background: #838e90;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #b89335;
   color: white;
-  padding: 0 12px;
+  height: 45px;
+  width: 45px;
   font-weight: bold;
-  line-height: 42px;
   border: none;
-  font-size: 2em;
+  font-size: 1.3em;
+}
+/* line 80, ../../sass/styles.scss */
+#mainApp #task-entry input {
+  width: 100%;
+  border: none;
+  padding: 11px 0 12px;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-border-radius: 2em;
   -moz-border-radius: 2em;
   -ms-border-radius: 2em;
   -o-border-radius: 2em;
   border-radius: 2em;
 }
-/* line 73, ../../sass/styles.scss */
+/* line 2, ../../sass/styles.scss */
+#mainApp #task-entry input::-webkit-input-placeholder {
+  color: #555555;
+  font-style: italic;
+}
+/* line 3, ../../sass/styles.scss */
+#mainApp #task-entry input:-moz-placeholder {
+  color: #555555;
+  font-style: italic;
+}
+/* line 4, ../../sass/styles.scss */
+#mainApp #task-entry input::-moz-placeholder {
+  color: #555555;
+  font-style: italic;
+}
+/* line 5, ../../sass/styles.scss */
+#mainApp #task-entry input:-ms-input-placeholder {
+  color: #555555;
+  font-style: italic;
+}
+/* line 94, ../../sass/styles.scss */
 #mainApp .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -587,7 +616,7 @@ body {
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 73, ../../sass/styles.scss */
+  /* line 94, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 3.2em;
     padding-top: 75px;
@@ -596,7 +625,7 @@ body {
   }
 }
 @media (min-width: 37.5em) {
-  /* line 73, ../../sass/styles.scss */
+  /* line 94, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;

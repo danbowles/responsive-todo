@@ -2,13 +2,15 @@
   display: none;
   
   a {
-    display: inline-block;
-    padding: 5px;
+    display: block;
+    height: 45px;
+    width: 45px;
     background: $nav-hamburger-background;
-    @include border-radius(3em);
     
     img {
       vertical-align: middle;
+      max-width: 80%;
+      margin-left: 3px;
     }
   }
   
@@ -23,7 +25,6 @@
     top: 0;
     background: rgba(#eeeeee, 1);
     border-bottom: 1px solid $primary-border-color;
-    padding: 4px 5px;
     display: block;
   }
 }
