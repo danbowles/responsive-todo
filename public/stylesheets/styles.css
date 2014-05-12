@@ -252,9 +252,9 @@ ul, ol {
 }
 /* line 10, ../../sass/partials/_navigation.scss */
 .go-to-nav a img {
-  vertical-align: middle;
-  max-width: 80%;
-  margin-left: 3px;
+  margin: auto;
+  display: block;
+  padding-top: 6px;
 }
 /* line 17, ../../sass/partials/_navigation.scss */
 .show-nav .go-to-nav img {
@@ -578,11 +578,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  -ms-border-radius: 2em;
-  -o-border-radius: 2em;
-  border-radius: 2em;
+  font-size: 1.4em;
 }
 /* line 2, ../../sass/styles.scss */
 #mainApp #task-entry input::-webkit-input-placeholder {

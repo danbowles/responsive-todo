@@ -87,7 +87,7 @@ body {
       padding: 11px 0 12px;
       background: transparent;
       @include box-sizing(border-box);
-      @include border-radius(2em);
+      font-size: 1.4em;
     }
   }
   
