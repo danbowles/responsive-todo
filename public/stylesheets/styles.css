@@ -552,11 +552,18 @@ body {
 #mainApp #task-entry {
   position: absolute;
   z-index: 1;
-  width: 85%;
+  width: 90%;
   text-align: right;
   right: 0;
 }
-/* line 67, ../../sass/styles.scss */
+@media (min-width: 37.5em) {
+  /* line 60, ../../sass/styles.scss */
+  #mainApp #task-entry {
+    width: 100%;
+    background: #eeeeee;
+  }
+}
+/* line 72, ../../sass/styles.scss */
 #mainApp #task-entry button {
   position: absolute;
   right: 0;
@@ -569,11 +576,27 @@ body {
   border: none;
   font-size: 1.3em;
 }
-/* line 80, ../../sass/styles.scss */
+@media (min-width: 28em) {
+  /* line 72, ../../sass/styles.scss */
+  #mainApp #task-entry button {
+    width: 85px;
+  }
+}
+/* line 88, ../../sass/styles.scss */
+#mainApp #task-entry button > span {
+  display: none;
+}
+@media (min-width: 28em) {
+  /* line 88, ../../sass/styles.scss */
+  #mainApp #task-entry button > span {
+    display: inline;
+  }
+}
+/* line 97, ../../sass/styles.scss */
 #mainApp #task-entry input {
   width: 100%;
   border: none;
-  padding: 11px 0 12px;
+  padding: 11px 57px 12px 5%;
   background: transparent;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -600,7 +623,13 @@ body {
   color: #555555;
   font-style: italic;
 }
-/* line 94, ../../sass/styles.scss */
+@media (min-width: 28em) {
+  /* line 97, ../../sass/styles.scss */
+  #mainApp #task-entry input {
+    padding-right: 97px;
+  }
+}
+/* line 115, ../../sass/styles.scss */
 #mainApp .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -612,7 +641,7 @@ body {
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 94, ../../sass/styles.scss */
+  /* line 115, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 3.2em;
     padding-top: 75px;
@@ -621,7 +650,7 @@ body {
   }
 }
 @media (min-width: 37.5em) {
-  /* line 94, ../../sass/styles.scss */
+  /* line 115, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;
