@@ -46,7 +46,7 @@ body {
   
   @media (min-width: $bp-narrow-plus-1) {
     width: 60%;
-    margin-top: 60px;
+    margin-top: 120px;
     max-width: 550px;
     border: 1px solid $primary-border-color;
     @include border-radius(2px);
@@ -67,6 +67,9 @@ body {
     @media (min-width: $bp-narrow-plus-1) {
       width: 100%;
       background: #eeeeee;
+      right: -1px;
+      border: 1px solid $primary-border-color;
+      top: -87px;
     }
     
     button {
@@ -75,7 +78,7 @@ body {
       top: 0;
       background: $add-task-button-background;
       color: $add-task-button-color;
-      height: 45px;
+      height: 46px;
       width: 45px;
       font-weight: bold;
       border: none;
@@ -119,14 +122,13 @@ body {
     letter-spacing: 0.06em;
     color: $list-primary-color;
     padding-top: 66px;
-    margin: 0 0 25px;
+    margin: 0 0 22px;
     @include text-shadow(.01em .01em 0px white,
       .08em .08em 0px $list-secondary-shadow);
     
     @media (min-width: $bp-narrow) {
       font-size: 3.2em;
       padding-top: 75px;
-      margin: 0 0 34px;
       @include text-shadow(.013em 0.013em 0 white,
       0.1066666664em 0.1066666664em 0px $list-secondary-shadow);
     }
@@ -135,7 +137,7 @@ body {
       @include text-shadow(1px 1px 0px white,
       5px 5px 0px $list-secondary-shadow);
       padding-top: 0;
-      margin: 42px 0;
+      margin: 22px 0;
     }
   }
 }

@@ -531,7 +531,7 @@ body {
   /* line 43, ../../sass/styles.scss */
   #mainApp {
     width: 60%;
-    margin-top: 60px;
+    margin-top: 120px;
     max-width: 550px;
     border: 1px solid #99a3a5;
     -webkit-border-radius: 2px;
@@ -561,38 +561,41 @@ body {
   #mainApp #task-entry {
     width: 100%;
     background: #eeeeee;
+    right: -1px;
+    border: 1px solid #99a3a5;
+    top: -87px;
   }
 }
-/* line 72, ../../sass/styles.scss */
+/* line 75, ../../sass/styles.scss */
 #mainApp #task-entry button {
   position: absolute;
   right: 0;
   top: 0;
   background: #b89335;
   color: white;
-  height: 45px;
+  height: 46px;
   width: 45px;
   font-weight: bold;
   border: none;
   font-size: 1.3em;
 }
 @media (min-width: 28em) {
-  /* line 72, ../../sass/styles.scss */
+  /* line 75, ../../sass/styles.scss */
   #mainApp #task-entry button {
     width: 85px;
   }
 }
-/* line 88, ../../sass/styles.scss */
+/* line 91, ../../sass/styles.scss */
 #mainApp #task-entry button > span {
   display: none;
 }
 @media (min-width: 28em) {
-  /* line 88, ../../sass/styles.scss */
+  /* line 91, ../../sass/styles.scss */
   #mainApp #task-entry button > span {
     display: inline;
   }
 }
-/* line 97, ../../sass/styles.scss */
+/* line 100, ../../sass/styles.scss */
 #mainApp #task-entry input {
   width: 100%;
   border: none;
@@ -624,12 +627,12 @@ body {
   font-style: italic;
 }
 @media (min-width: 28em) {
-  /* line 97, ../../sass/styles.scss */
+  /* line 100, ../../sass/styles.scss */
   #mainApp #task-entry input {
     padding-right: 97px;
   }
 }
-/* line 115, ../../sass/styles.scss */
+/* line 118, ../../sass/styles.scss */
 #mainApp .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -637,24 +640,23 @@ body {
   letter-spacing: 0.06em;
   color: #838e90;
   padding-top: 66px;
-  margin: 0 0 25px;
+  margin: 0 0 22px;
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 115, ../../sass/styles.scss */
+  /* line 118, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 3.2em;
     padding-top: 75px;
-    margin: 0 0 34px;
     text-shadow: 0.013em 0.013em 0 white, 0.10667em 0.10667em 0px #dec88e;
   }
 }
 @media (min-width: 37.5em) {
-  /* line 115, ../../sass/styles.scss */
+  /* line 118, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;
     padding-top: 0;
-    margin: 42px 0;
+    margin: 22px 0;
   }
 }
