@@ -6,7 +6,7 @@ var tasks = [
         "done": false,
         "priority": 8,
         "name": "Take out trash",
-        "category": ""
+        "category": "Must do no matter what"
     },
     {
         "id": 1,
@@ -45,4 +45,4 @@ var tasks = [
     }
 ];
 
-db.tododb.save(tasks);
+db.todos.save(tasks);
