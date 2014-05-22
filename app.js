@@ -7,7 +7,8 @@ var cookieParser    = require('cookie-parser');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 
-// TODO database
+var db = require('./db.js');
+
 var todoList = require('./routes/todoList');
 var routes = require('./routes/index');
 
@@ -22,6 +23,11 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
+
+app.use(function(req, res, next) {
+  req.db = db;
+  next();
+});
 
 app.use('/', routes);
 app.use('/api', todoList);

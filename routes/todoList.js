@@ -35,4 +35,12 @@ router.get('/list', function(req, res) {
   res.json(list);
 });
 
+router.get('/mList', function(req, res) {
+  var db = req.db;
+  db.collection('todos').find().toArray(function(err, items) {
+    console.dir(items);
+    res.json(items);
+  });
+});
+
 module.exports = router;

@@ -13,6 +13,8 @@
     "body-parser": "~1.0.0",
     "debug": "*",
     "jade": "*",
-    "method-override": "~1.0.0"
+    "method-override": "~1.0.0",
+    "mongodb": "*",
+    "mongoskin": "*"
   }
 }
