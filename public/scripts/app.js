@@ -1,14 +1,8 @@
-angular.module('respTodo', []);
+/*global angular, jQuery */
+/*jshint unused:false */
+'use strict';
 
-angular.module('respTodo').controller('TodoCtrl', function TodoCtrl($scope, $http) {
-    $http.get('/api/list')
-      .success(function(listData) {
-        $scope.list = listData;
-      })
-      .error(function(error) {
-        console.log("Error: " + error);
-      });
-  });
+var respTodo = angular.module('respTodo', []);
 
 (function($) {
   $(function() {

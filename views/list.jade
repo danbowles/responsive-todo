@@ -1,9 +1,9 @@
-section(ng-repeat='category in list')
-  h3: span {{category.text}}
-  h5(ng-if='$first') completed?
+section
+  h3: span DO IT
+  h5 completed?
   ol
-    li(ng-repeat='task in category.tasks')
-      span {{task.title}}
+    li(ng-repeat='task in list')
+      span {{task.name}}
         div.done-checkbox
-          input(type='checkbox', ng-model='task.isDone' id='todo-{{$parent.$index}}{{$index}}')
-          label(for='todo-{{$parent.$index}}{{$index}}')
+          input(type='checkbox', ng-model='task.done' id='todo-{{task._id}}')
+          label(for='todo-{{task._id}}')
