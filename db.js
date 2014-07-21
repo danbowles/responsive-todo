@@ -1,5 +1,6 @@
+var debug = require('debug')('mongodb');
 var mongo = require('mongoskin');
-var connectionString = process.env.IP + ':27017/todos';
+var connectionString = (process.env.IP || '127.0.0.1') + ':27017/todos';
 var db;
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
@@ -10,7 +11,7 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
   process.env.OPENSHIFT_APP_NAME;
 }
 
-
+debug(connectionString);
 
 
 db = mongo.db('mongodb://' + connectionString, {native_parser: true});
