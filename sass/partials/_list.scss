@@ -63,10 +63,13 @@
       }
       
       span {
+        font-family: 'Gloria Hallelujah', cursive;
+        color: #444444;
+        font-size: 1.2em;
         border-bottom: 1px solid #99A3A5;
         display: block;
         margin: 0 2.5em;
-        padding: 10px;
+        padding: 0 10px 10px;
       }
       input[type=checkbox] {
         visibility: hidden;
@@ -104,4 +107,10 @@
       }
     }
    } // end ol
+   
+   .done-checkbox {
+     position: absolute;
+     top: 0;
+     right: 0;
+   }
 }
