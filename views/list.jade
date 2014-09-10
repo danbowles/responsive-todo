@@ -2,8 +2,8 @@ section
   h3: span DO IT
   h5 completed?
   ol
-    li(ng-repeat='task in list')
-      span {{task.name}}
+    li(ng-repeat='todo in list')
+      span {{todo.name}}
         div.done-checkbox
-          input(type='checkbox', ng-model='task.done' id='todo-{{task._id}}')
-          label(for='todo-{{task._id}}')
+          input(type='checkbox', ng-model='todo.done' id='todo-{{todo._id}}' ng-change='updateTodo(todo)')
+          label(for='todo-{{todo._id}}')

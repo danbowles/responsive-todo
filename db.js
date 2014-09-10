@@ -15,5 +15,6 @@ debug(connectionString);
 
 
 db = mongo.db('mongodb://' + connectionString, {native_parser: true});
+db.toObjectID = mongo.helper.toObjectID;
 
 module.exports = db;

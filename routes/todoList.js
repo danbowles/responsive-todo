@@ -12,12 +12,30 @@ router.get('/list', function(req, res) {
 
 router.put('/list/:item_id', function(req, res) {
   var db = req.db;
-  var todoId = req.params.item_id;
-  var todo;
+  var todoId = db.toObjectID(req.params.item_id);
+
+  var todo = req.body;
   
-  todo = db.collection('todos').find({_id: new ObjectId(todoId)})
-    .toArray(function(err, item) {
-      res.json(item);
+  db.bind('todos');
+
+  db.todos.findOne({_id: todoId}, function(err, item) {
+    if (err) throw err;
+
+    console.log(item);
+  });
+
+  // debugger;
+  db.todos.update(
+    {_id: todoId},
+    {$set:
+      {
+        done: todo.done,
+        name: todo.name
+      }
+    }, function(err, result) {
+      var updatedTodo;
+      if (err) throw err;
+      if (result) console.log('Updated ' + todoId);
     });
 });
 
