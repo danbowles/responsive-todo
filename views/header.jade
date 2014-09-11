@@ -1,8 +1,9 @@
 header
   div#task-entry
-    input(type='text', placeholder='Almost forgot to...')
-    button +
-      span &nbsp;Add
+    form(ng-submit='createTodo()')
+      input(type='text', ng-model='newTodo', placeholder='Almost forgot to...', autofocus)
+      button(type='submit') +
+        span &nbsp;Add
   div.go-to-nav
     a(href='#')
       img(src='assets/hamburger-icon-32.svg')

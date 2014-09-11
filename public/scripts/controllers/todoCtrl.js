@@ -3,7 +3,7 @@
 'use strict';
 
 respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
-	$http.get('/api/list')
+	$http.get('/api/todos')
     .success(function(listData) {
       $scope.list = listData;
     })
@@ -12,12 +12,24 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
     });
 
   $scope.updateTodo = function(todo) {
-    $http.put('/api/list/' + todo._id, todo)
-      .success(function(listData) {
-        $scope.list = listData;
-      })
+    $http.put('/api/todos/' + todo._id, todo)
       .error(function(error) {
         throw error;
       });
+  };
+
+  $scope.createTodo = function() {
+    $scope.newTodo = $scope.newTodo.trim();
+
+    if (!$scope.newTodo.length) return;
+
+
+    var newTodo = {
+      name: $scope.newTodo.trim(),
+      done: false
+    };
+
+    // on success...
+    $scope.newTodo = '';
   };
 });

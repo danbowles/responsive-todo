@@ -16,5 +16,8 @@
     "method-override": "~1.0.0",
     "mongodb": "*",
     "mongoskin": "*"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8"
   }
 }

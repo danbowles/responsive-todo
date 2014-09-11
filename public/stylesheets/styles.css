@@ -582,7 +582,7 @@ body {
   top: 0;
   background: #b89335;
   color: white;
-  height: 46px;
+  height: 47px;
   width: 45px;
   font-weight: bold;
   border: none;
@@ -617,23 +617,27 @@ body {
 }
 /* line 2, ../../sass/styles.scss */
 #mainApp #task-entry input::-webkit-input-placeholder {
-  color: #555555;
+  color: #676767;
   font-style: italic;
 }
 /* line 3, ../../sass/styles.scss */
 #mainApp #task-entry input:-moz-placeholder {
-  color: #555555;
+  color: #676767;
   font-style: italic;
 }
 /* line 4, ../../sass/styles.scss */
 #mainApp #task-entry input::-moz-placeholder {
-  color: #555555;
+  color: #676767;
   font-style: italic;
 }
 /* line 5, ../../sass/styles.scss */
 #mainApp #task-entry input:-ms-input-placeholder {
-  color: #555555;
+  color: #676767;
   font-style: italic;
+}
+/* line 106, ../../sass/styles.scss */
+#mainApp #task-entry input:focus {
+  outline: none;
 }
 @media (min-width: 28em) {
   /* line 100, ../../sass/styles.scss */
@@ -641,7 +645,7 @@ body {
     padding-right: 97px;
   }
 }
-/* line 118, ../../sass/styles.scss */
+/* line 123, ../../sass/styles.scss */
 #mainApp .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -653,7 +657,7 @@ body {
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 118, ../../sass/styles.scss */
+  /* line 123, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 3.2em;
     padding-top: 75px;
@@ -661,7 +665,7 @@ body {
   }
 }
 @media (min-width: 37.5em) {
-  /* line 118, ../../sass/styles.scss */
+  /* line 123, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;

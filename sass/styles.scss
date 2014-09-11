@@ -78,7 +78,7 @@ body {
       top: 0;
       background: $add-task-button-background;
       color: $add-task-button-color;
-      height: 46px;
+      height: 47px;
       width: 45px;
       font-weight: bold;
       border: none;
@@ -99,9 +99,14 @@ body {
     
     input {
       @include placeholder {
-        color: #555555;
+        color: #676767;
         font-style: italic;
       }
+
+      &:focus {
+        outline: none;
+      }
+
       width: 100%;
       border: none;
       padding: 11px 57px 12px 5%;

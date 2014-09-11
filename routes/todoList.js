@@ -1,8 +1,9 @@
+var debug = require('debug')('api');
 var express = require('express');
 var ObjectId = require('mongoskin').ObjectID;
 var router = express.Router();
 
-router.get('/list', function(req, res) {
+router.get('/todos', function(req, res) {
   var db = req.db;
   
   db.collection('todos').find().toArray(function(err, items) {
@@ -10,21 +11,21 @@ router.get('/list', function(req, res) {
   });
 });
 
-router.put('/list/:item_id', function(req, res) {
+router.put('/todos/:todo_id', function(req, res) {
   var db = req.db;
-  var todoId = db.toObjectID(req.params.item_id);
+  var todoId = db.toObjectID(req.params.todo_id);
 
   var todo = req.body;
   
   db.bind('todos');
 
-  db.todos.findOne({_id: todoId}, function(err, item) {
-    if (err) throw err;
+  // TODO - find first & return 400 if not found
+  // db.todos.findOne({_id: todoId}, function(err, item) {
+  //   if (err) throw err;
 
-    console.log(item);
-  });
+  //   console.log(item);
+  // });
 
-  // debugger;
   db.todos.update(
     {_id: todoId},
     {$set:
@@ -35,7 +36,10 @@ router.put('/list/:item_id', function(req, res) {
     }, function(err, result) {
       var updatedTodo;
       if (err) throw err;
-      if (result) console.log('Updated ' + todoId);
+      if (result) {
+        debug('Updated ' + todoId);
+        res.status(204).end();
+      }
     });
 });
 
