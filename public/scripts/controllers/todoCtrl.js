@@ -23,11 +23,15 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
 
     if (!$scope.newTodo.length) return;
 
-
     var newTodo = {
       name: $scope.newTodo.trim(),
       done: false
     };
+
+    $http.post('/api/todos', newTodo)
+      .error(function(error) {
+        throw error;
+      });
 
     // on success...
     $scope.newTodo = '';
