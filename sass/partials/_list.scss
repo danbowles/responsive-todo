@@ -156,15 +156,23 @@ $list-item-text-color: #444444;
   button.delete {
     background: #b83535;
     box-shadow: 0 4px 0 lighten(#b83535, 30%);
-    font-weight: bold;
     color: white;
     border: none;
     border-radius: 2.8em;
-    width: 2.8em;
-    height: 2.8em;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1.2em;
     position: absolute;
     right: 0;
     top: 0;
     outline: none;
+    white-space: nowrap;
+    @include transition(all ease-in-out 0.2s);
+
+    &:hover {
+      background: lighten(#b83535, 20%);
+      box-shadow: 0 4px 0 lighten(#b83535, 30%),
+        0 0 35px #b83535 inset;
+    }
   }
 }
