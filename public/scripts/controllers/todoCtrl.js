@@ -3,13 +3,32 @@
 'use strict';
 
 respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
+
 	$http.get('/api/todos')
     .success(function(listData) {
-      $scope.list = listData;
+      $scope.todos = listData;
     })
     .error(function(error) {
       throw error;
     });
+
+  $scope.editTodo = function(todo) {
+    $scope.editingTodo = todo;
+    $scope.originalTodo = todo;
+    // TODO
+  };
+
+  $scope.finishEditing = function(todo) {
+    $scope.editingTodo = null;
+
+    todo.name = todo.name.trim();
+
+    if (!todo.name) {
+      $scope.removeTodo(todo);
+    } else {
+      $scope.updateTodo(todo);
+    }
+  };
 
   $scope.updateTodo = function(todo) {
     $http.put('/api/todos/' + todo._id, todo)
@@ -18,13 +37,22 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
       });
   };
 
+  $scope.removeTodo = function(todo) {
+    $http.delete('/api/todos/' + todo._id, todo)
+      .error(function(error) {
+        throw error;
+      });
+
+    $scope.todos.splice($scope.todos.indexOf(todo), 1);
+  };
+
   $scope.createTodo = function() {
     $scope.newTodo = $scope.newTodo.trim();
 
     if (!$scope.newTodo.length) return;
 
     var newTodo = {
-      name: $scope.newTodo.trim(),
+      name: $scope.newTodo,
       done: false
     };
 
@@ -33,7 +61,7 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
         throw error;
       });
 
-    // on success...
     $scope.newTodo = '';
+    $scope.todos.push(newTodo);
   };
 });
