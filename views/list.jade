@@ -11,4 +11,4 @@ section(ng-show="todos.length")
       div(class='modify')
         form(ng-submit='finishEditing(todo)', ng-model='editingTodo')
           input(class='edit', ng-model='todo.name', ng-blur='finishEditing(todo)')
-        button(class='delete', ng-click='removeTodo(todo)')
+        button(class='delete', ng-click='removeTodo(todo)') X
