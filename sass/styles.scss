@@ -56,6 +56,15 @@ body {
   header {
     position: relative;
   }
+
+  footer {
+    text-align: center;
+    color: $list-primary-color;
+
+    a {
+      color: $list-secondary-color;
+    }
+  }
   
   #task-entry {
     position: absolute;

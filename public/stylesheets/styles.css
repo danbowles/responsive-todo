@@ -223,7 +223,7 @@ td, th {
 }
 
 /* line 5, ../../sass/partials/_reset.scss */
-h1, h2, h3, h4, h5, h6, li, button, input {
+h1, h2, h3, h4, h5, h6, li, button, input, footer {
   font-family: 'Rokkitt', serif;
 }
 
@@ -606,6 +606,15 @@ body {
   position: relative;
 }
 /* line 60, ../../sass/styles.scss */
+#mainApp footer {
+  text-align: center;
+  color: #838e90;
+}
+/* line 64, ../../sass/styles.scss */
+#mainApp footer a {
+  color: #b89335;
+}
+/* line 69, ../../sass/styles.scss */
 #mainApp #task-entry {
   position: absolute;
   z-index: 1;
@@ -614,7 +623,7 @@ body {
   right: 0;
 }
 @media (min-width: 37.5em) {
-  /* line 60, ../../sass/styles.scss */
+  /* line 69, ../../sass/styles.scss */
   #mainApp #task-entry {
     width: 100%;
     background: #eeeeee;
@@ -623,7 +632,7 @@ body {
     top: -87px;
   }
 }
-/* line 75, ../../sass/styles.scss */
+/* line 84, ../../sass/styles.scss */
 #mainApp #task-entry button {
   position: absolute;
   right: 0;
@@ -637,22 +646,22 @@ body {
   font-size: 1.3em;
 }
 @media (min-width: 28em) {
-  /* line 75, ../../sass/styles.scss */
+  /* line 84, ../../sass/styles.scss */
   #mainApp #task-entry button {
     width: 85px;
   }
 }
-/* line 91, ../../sass/styles.scss */
+/* line 100, ../../sass/styles.scss */
 #mainApp #task-entry button > span {
   display: none;
 }
 @media (min-width: 28em) {
-  /* line 91, ../../sass/styles.scss */
+  /* line 100, ../../sass/styles.scss */
   #mainApp #task-entry button > span {
     display: inline;
   }
 }
-/* line 100, ../../sass/styles.scss */
+/* line 109, ../../sass/styles.scss */
 #mainApp #task-entry input {
   width: 100%;
   border: none;
@@ -683,17 +692,17 @@ body {
   color: #676767;
   font-style: italic;
 }
-/* line 106, ../../sass/styles.scss */
+/* line 115, ../../sass/styles.scss */
 #mainApp #task-entry input:focus {
   outline: none;
 }
 @media (min-width: 28em) {
-  /* line 100, ../../sass/styles.scss */
+  /* line 109, ../../sass/styles.scss */
   #mainApp #task-entry input {
     padding-right: 97px;
   }
 }
-/* line 123, ../../sass/styles.scss */
+/* line 132, ../../sass/styles.scss */
 #mainApp .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -705,7 +714,7 @@ body {
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 123, ../../sass/styles.scss */
+  /* line 132, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 3.2em;
     padding-top: 75px;
@@ -713,7 +722,7 @@ body {
   }
 }
 @media (min-width: 37.5em) {
-  /* line 123, ../../sass/styles.scss */
+  /* line 132, ../../sass/styles.scss */
   #mainApp .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;
