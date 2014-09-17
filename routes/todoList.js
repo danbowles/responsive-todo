@@ -1,8 +1,5 @@
-var debug = require('debug')('api');
 var express = require('express');
-var ObjectId = require('mongoskin').ObjectID;
 var router = express.Router();
-
 
 //
 // GET Todos
@@ -24,13 +21,15 @@ router
   db.todos.insert(todo, function(err) {
     if (err) {
       console.log("Cannot Insert:", err);
-      req.status(400).end();
+      res.status(400).end();
     }
+
+    res.json(todo);
   });
 })
-.put('/todos/:todo_id', function(req, res) {
+.put('/todos/:todoId', function(req, res) {
   var db = req.db;
-  var todoId = db.toObjectID(req.params.todo_id);
+  var todoId = db.toObjectID(req.params.todoId);
   var todo = req.body;
   
   db.bind('todos');
@@ -42,22 +41,17 @@ router
   });
 
   db.todos.update(
-    {_id: todoId},
-    {$set:
-      {
-        done: todo.done,
-        name: todo.name
-      }
-    }, function(err, result) {
+    {_id: todoId}, {$set: {done: todo.done, name: todo.name}},
+    function(err, result) {
       if (err) throw err;
       if (result) {
         res.status(204).end();
       }
     });
 })
-.delete('/todos/:todo_id', function(req, res) {
+.delete('/todos/:todoId', function(req, res) {
   var db = req.db;
-  var todoId = db.toObjectID(req.params.todo_id);
+  var todoId = db.toObjectID(req.params.todoId);
 
   db.bind('todos');
 

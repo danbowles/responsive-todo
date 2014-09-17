@@ -1,14 +1,15 @@
-section(ng-show="todos.length")
-  h3: span DO IT
-  h5 completed?
-  ol
-    li(ng-repeat='todo in todos', ng-class='{complete: todo.done, editing: todo == editingTodo}')
-      div(class='view')
-        span(ng-click='editTodo(todo)') {{todo.name}}
-        div.done-checkbox
-          input(type='checkbox', ng-model='todo.done' id='todo-{{todo._id}}' ng-change='updateTodo(todo)')
-          label(for='todo-{{todo._id}}')
-      div(class='modify')
-        form(ng-submit='finishEditing(todo)', ng-model='editingTodo')
-          input(class='edit', ng-model='todo.name', ng-blur='finishEditing(todo)')
-        button(class='delete', ng-click='removeTodo(todo)')&cross;
+section
+  h3: span {{subTitle}}
+  div(ng-show="todos.length")
+    h5 completed?
+    ol
+      li(ng-repeat='todo in todos', ng-class='{complete: todo.done, editing: todo == editingTodo}')
+        div(class='view')
+          span(ng-click='editTodo(todo)') {{todo.name}}
+          div.done-checkbox
+            input(type='checkbox', ng-model='todo.done' id='todo-{{todo._id}}' ng-change='updateTodo(todo)')
+            label(for='todo-{{todo._id}}')
+        div(class='modify')
+          form(ng-submit='finishEditing(todo)', ng-model='editingTodo')
+            input(class='edit', ng-model='todo.name')
+          button(class='delete', ng-click='removeTodo(todo)') &cross;

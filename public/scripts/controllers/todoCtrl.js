@@ -2,11 +2,21 @@
 /*jshint unused:false */
 'use strict';
 
-respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
+respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
+  var todos = [];
+
+  $scope.$watch('todos', function(newVal, oldVal) {
+    $scope.incompleteCount = $filter('filter')(todos, {done: false}).length;
+    $scope.completeCount = todos.length - $scope.incompleteCount;
+    $scope.subTitle = todos.length ? 'Get Doin\'' : 'Nothin\' here - add something!';
+  }, true);
+    // total = length
+    // complete = filter where done==true
+    // incomplete = filter where done==false
 
 	$http.get('/api/todos')
     .success(function(listData) {
-      $scope.todos = listData;
+      todos = $scope.todos = listData;
     })
     .error(function(error) {
       throw error;
@@ -49,7 +59,9 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
   $scope.createTodo = function() {
     $scope.newTodo = $scope.newTodo.trim();
 
-    if (!$scope.newTodo.length) return;
+    if (!$scope.newTodo.length) {
+      return;
+    }
 
     var newTodo = {
       name: $scope.newTodo,
@@ -57,6 +69,10 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http) {
     };
 
     $http.post('/api/todos', newTodo)
+      .success(function(todo) {
+        newTodo._id = todo._id;
+        console.log(newTodo);
+      })
       .error(function(error) {
         throw error;
       });
