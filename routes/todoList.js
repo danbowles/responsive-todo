@@ -1,68 +1,78 @@
 var express = require('express');
 var router = express.Router();
+var Todo = require('../models/todo');
 
-//
-// GET Todos
-// 
-router
-.get('/todos', function(req, res) {
-  var db = req.db;
-  
-  db.collection('todos').find().toArray(function(err, items) {
-    res.json(items);
-  });
-})
-.post('/todos', function(req, res) {
-  var db = req.db;
-  var todo = req.body;
-
-  db.bind('todos');
-
-  db.todos.insert(todo, function(err) {
+router.param('todoId', function(req, res, next, todoId) {
+  Todo.findById(todoId, function(err, todo) {
     if (err) {
-      console.log("Cannot Insert:", err);
-      res.status(400).end();
+      res.send(err);
+    }
+    req.todo = todo;
+    req.newTodo = req.body;
+    next();
+  });
+});
+
+// /todos
+// ====================================================
+var todosRoute = router.route('/todos');
+todosRoute.get(function(req, res) {
+
+  Todo.find(function(err, todos) {
+    if (err) {
+      res.send(err);
     }
 
-    res.json(todo);
+    res.json(todos);
   });
 })
-.put('/todos/:todoId', function(req, res) {
-  var db = req.db;
-  var todoId = db.toObjectID(req.params.todoId);
-  var todo = req.body;
+.post(function(req, res) {
+  var todo = new Todo();
   
-  db.bind('todos');
+  if (req.todoId) {
+    res.status(400).json({error: 'Invalid request'}).end();
+  }
 
-  // TODO - find first & return 404 if not found
-  db.todos.findOne({_id: todoId}, function(err, item) {
-    if (err) throw err;
-    if (!item) res.status(404, 'Todo Item Not Found').end();
+  todo.name = req.body.name;
+  todo.done = false;
+
+  todo.save(function(err) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json({message: 'Todo Added!', data: todo});
   });
+});
 
-  db.todos.update(
-    {_id: todoId}, {$set: {done: todo.done, name: todo.name}},
-    function(err, result) {
-      if (err) throw err;
-      if (result) {
-        res.status(204).end();
-      }
-    });
+// /todos/ID
+// ====================================================
+todosRoute = router.route('/todos/:todoId');
+todosRoute.get(function(req, res) {
+  res.json(req.todo);
 })
-.delete('/todos/:todoId', function(req, res) {
-  var db = req.db;
-  var todoId = db.toObjectID(req.params.todoId);
+.post(function(req, res) {
+  res.status(400).send('Cannot create - Todo exists');
+})
+.put(function(req, res) {
 
-  db.bind('todos');
+  req.todo.name = req.newTodo.name;
+  req.todo.done = req.newTodo.done;
 
-  db.todos.findOne({_id: todoId}, function(err, item) {
-    if (err) throw err;
-    if (!item) res.status(404, 'Todo Item Not Found').end();
-    
-    db.todos.remove({_id: todoId}, function(err) {
-      if (err) throw err;
-      res.status(204).end();
-    });
+  req.todo.save(function(err) {
+    if (err) {
+      res.send(err);
+    }
+  });
+  res.send(req.newTodo);
+})
+.delete(function(req, res) {
+  Todo.remove(req.todo, function(err) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.send('Removed Todo');
   });
 });
 

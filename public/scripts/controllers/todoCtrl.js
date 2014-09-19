@@ -69,8 +69,8 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
     };
 
     $http.post('/api/todos', newTodo)
-      .success(function(todo) {
-        newTodo._id = todo._id;
+      .success(function(result) {
+        newTodo._id = result.data._id;
         console.log(newTodo);
       })
       .error(function(error) {

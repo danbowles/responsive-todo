@@ -6,8 +6,7 @@ var logger          = require('morgan');
 var cookieParser    = require('cookie-parser');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
-
-var db = require('./db.js');
+var database = require('./database');
 
 var todoList = require('./routes/todoList');
 var routes = require('./routes/index');
@@ -24,10 +23,7 @@ app.use(cookieParser());
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
-app.use(function(req, res, next) {
-  req.db = db;
-  next();
-});
+database.connect();
 
 app.use('/', routes);
 app.use('/api', todoList);
