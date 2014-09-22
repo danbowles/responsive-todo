@@ -13,8 +13,27 @@ var UserSchema = new mongoose.Schema({
 	}
 });
 
+UserSchema.verifyPassword = function(password, callback) {
+	bcrypt.compare(password, this.password, function(err, isMatch) {
+		if (err) { return callback(err); }
+		callback(null, isMatch);
+	});
+};
+
 UserSchema.pre('save', function(callback) {
 	var user = this;
 
-  // http://scottksmith.com/blog/2014/05/29/beer-locker-building-a-restful-api-with-node-passport/
+	if (!user.isModified('password')) { return callback(); }
+
+	bcrypt.genSalt(5, function(err, salt) {
+		if (err) { return callback(err); }
+
+		bcrypt.hash(user.password, salt, null, function(err, hash) {
+			if (err) { return callback(err); }
+			user.password = hash;
+			callback();
+		});
+	});
 });
+
+module.exports = mongoose.model('User', UserSchema);
