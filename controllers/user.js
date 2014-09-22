@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var authCtrl = require('./auth');
 
 var User = require('../models/user');
 
 var usersRoute = router.route('/users');
-usersRoute.get(function(req, res) {
+usersRoute.get(authCtrl.isAuthenticated, function(req, res) {
   User.find(function(err, users) {
     if (err) res.send(err);
 

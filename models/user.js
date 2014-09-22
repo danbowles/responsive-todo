@@ -9,11 +9,11 @@ var UserSchema = new mongoose.Schema({
 	},
 	password: {
 		type: String,
-		require: true
+		required: true
 	}
 });
 
-UserSchema.verifyPassword = function(password, callback) {
+UserSchema.methods.verifyPassword = function(password, callback) {
 	bcrypt.compare(password, this.password, function(err, isMatch) {
 		if (err) { return callback(err); }
 		callback(null, isMatch);

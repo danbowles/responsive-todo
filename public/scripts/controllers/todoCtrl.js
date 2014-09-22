@@ -14,7 +14,7 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
     // complete = filter where done==true
     // incomplete = filter where done==false
 
-	$http.get('/todos')
+	$http.get('/api/todos')
     .success(function(listData) {
       todos = $scope.todos = listData;
     })
@@ -41,14 +41,14 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
   };
 
   $scope.updateTodo = function(todo) {
-    $http.put('/todos/' + todo._id, todo)
+    $http.put('/api/todos/' + todo._id, todo)
       .error(function(error) {
         throw error;
       });
   };
 
   $scope.removeTodo = function(todo) {
-    $http.delete('/todos/' + todo._id, todo)
+    $http.delete('/api/todos/' + todo._id, todo)
       .error(function(error) {
         throw error;
       });
@@ -68,7 +68,7 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
       done: false
     };
 
-    $http.post('/todos', newTodo)
+    $http.post('/api/todos', newTodo)
       .success(function(result) {
         newTodo._id = result.data._id;
         console.log(newTodo);

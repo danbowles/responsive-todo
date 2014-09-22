@@ -11,14 +11,13 @@ var passport = require('passport');
 var todoCtrl = require('./controllers/todo');
 var indexCtrl = require('./controllers/index');
 var userCtrl = require('./controllers/user');
-// TODO var authCtrl = require('./controllers/auth');
 
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// TODO app.use(passport.initialize());
+app.use(passport.initialize());
 app.use(favicon());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -29,8 +28,8 @@ app.use(express.static(__dirname + '/public'));
 database.connect();
 
 app.use('/', indexCtrl)
-  .use('/', todoCtrl)
-  .use('/', userCtrl);
+  .use('/api', todoCtrl)
+  .use('/api', userCtrl);
 
 // 404 Error page setup
 app.use(function(req, res, next) {
