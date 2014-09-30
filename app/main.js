@@ -6,14 +6,14 @@ var logger          = require('morgan');
 var cookieParser    = require('cookie-parser');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
-var database = require('./database');
 
-var todoList = require('./routes/todoList');
-var routes = require('./routes/index');
+var database = require('../config/database');
+var todoList = require('../routes/todoList');
+var routes   = require('../routes/index');
+var app      = express();
 
-var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'jade');
 
 app.use(favicon());
