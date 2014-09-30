@@ -14,7 +14,7 @@ Database.prototype.connect = function() {
     process.env.OPENSHIFT_MONGODB_DB_PORT + '/todos';
   }
 
-  debug(this.connectionString);
+  console.log(this.connectionString);
 
   mongoose.connect('mongodb://' + this.connectionString);
 };
