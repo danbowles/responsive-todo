@@ -1,0 +1,62 @@
+  #task-entry {
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    text-align: right;
+    right: 0;
+    
+    @media (min-width: $bp-narrow-plus-1) {
+      width: 100%;
+      background: #eeeeee;
+      right: -1px;
+      border: 1px solid $primary-border-color;
+      top: -87px;
+    }
+    
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $add-task-button-background;
+      color: $add-task-button-color;
+      height: 47px;
+      width: 45px;
+      font-weight: bold;
+      border: none;
+      font-size: 1.3em;
+      
+      @media (min-width: $bp-narrow) {
+        width: 85px;
+      }
+      
+      &>span {
+        display: none;
+        
+        @media (min-width: $bp-narrow) {
+          display: inline;
+        }
+      }
+    }
+    
+    input {
+      @include placeholder {
+        color: #676767;
+        font-style: italic;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      width: 100%;
+      border: none;
+      padding: 11px 57px 12px 5%;
+      background: transparent;
+      @include box-sizing(border-box);
+      font-size: 1.4em;
+      
+      @media (min-width: $bp-narrow) {
+        padding-right: 97px;
+      }
+    }
+  }

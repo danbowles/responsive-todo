@@ -2,7 +2,7 @@
 /*jshint unused:false */
 'use strict';
 
-respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
+respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $filter) {
   var todos = [];
 
   $scope.$watch('todos', function(newVal, oldVal) {
@@ -10,9 +10,15 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $http, $filter) {
     $scope.completeCount = todos.length - $scope.incompleteCount;
     $scope.subTitle = todos.length ? 'Get Doin\'' : 'Nothin\' here - add something!';
   }, true);
-    // total = length
-    // complete = filter where done==true
-    // incomplete = filter where done==false
+
+  $scope.location = $location;
+  $scope.$watch('location.path()', function(path) {
+    $scope.statusFilter = {
+      '/incomplete': {done: false},
+      '/complete': {done: true}
+    }[path];
+    $scope.editingTodo = null;
+  });
 
 	$http.get('/api/todos')
     .success(function(listData) {

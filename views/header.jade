@@ -9,10 +9,10 @@ header
       img(src='assets/hamburger-icon-32.svg')
   nav
     ul
-      li: a.all.is-active(href='#') All Tasks
+      li: a.all.is-active(href='#/all') All Tasks
         span {{todos.length}}
-      li: a.incomplete(href='#') Incomplete
+      li: a.incomplete(href='#/incomplete') Incomplete
         span {{incompleteCount}}
-      li: a.complete(href='#') Completed
+      li: a.complete(href='#/complete') Completed
         span {{completeCount}}
   h1.list-title to do list

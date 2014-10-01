@@ -3,7 +3,7 @@ section
   div(ng-show="todos.length")
     h5 completed?
     ol
-      li(ng-repeat='todo in todos', ng-class='{complete: todo.done, editing: todo == editingTodo}')
+      li(ng-repeat='todo in todos | filter: statusFilter track by $index', ng-class='{complete: todo.done, editing: todo == editingTodo}')
         div(class='view')
           span(ng-click='editTodo(todo)') {{todo.name}}
           div.done-checkbox
