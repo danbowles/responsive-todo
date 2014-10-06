@@ -1,11 +1,17 @@
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}  
-}
-
 // Variables
+
+/* palette - 
+  #D96D32 - All
+  #2A7D75 - Incomplete
+  #D92042 - Complete
+
+  #B4B565 - Nav Bg
+
+  #416675 - Add Task Btn Bg
+
+  #294C5D - To name
+
+*/
 
 $main-background: #DFDCD3;
 
@@ -16,9 +22,14 @@ $primary-border-color: #99A3A5;
 $secondary-border-color: lighten($primary-border-color, 15%);
 
 $add-task-button-background: $list-secondary-color;
-$add-task-button-color: #ffffff;
+$add-task-button-color: #FFFFFF;
 
+$delete-button-background: #B83535;
+$delete-button-background: #255C74;
+
+$nav-background: #B4B565; 
 $nav-hamburger-background: $list-primary-color;
+$nav-item-color: #FFFFFF;
 
 // Breakpoints
 $bp-narrow: 28em;
@@ -29,7 +40,7 @@ $bp-narrow-plus-1: 37.5em;
 @import "compass/utilities/general/clearfix";
 
 // Partials
-//@import "partials/mixins";
+@import "partials/mixins";
 @import "partials/reset";
 @import "partials/task-entry";
 @import "partials/navigation";
@@ -46,7 +57,7 @@ body {
 // App
 #main {
   margin: 0 auto;
-  background: #ffffff;
+  background: #FFFFFF;
   
   @media (min-width: $bp-narrow-plus-1) {
     width: 60%;

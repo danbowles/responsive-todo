@@ -35,13 +35,11 @@ nav {
   top: 51px;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid $primary-border-color;
-  background: #eeeeee;
+  background: $nav-background;
   display: none;
 
   .show-nav & {
     display: block;
-    @include box-shadow(0 3px 8px rgba(#000000,.15));
   }
   
   
@@ -50,7 +48,6 @@ nav {
     position: fixed;
     z-index: 1;
     display: block;
-    @include box-shadow(0 3px 8px rgba(#000000,.15));
   }
   
   ul {
@@ -65,67 +62,43 @@ nav {
     a {
       display: block;
       position: relative;
-      color: $primary-border-color;
+      color: $nav-item-color;
       text-decoration: none;
       font-weight: bold;
       text-transform: uppercase;
       line-height: 2.5em;
-      background: #eeeeee;
       
-      &:hover, &:active {
-        background: darken(#eeeeee, 5%);
+      &:hover span {
+        background: #ffffff;
       }
-      
-      // TODO: Make mixin/function to abstract
-      //       out nav filter css
-      &.complete {
-        background: $list-primary-color;
-        color: white;
-        
-        &:hover, &:active {
-          background: darken($list-primary-color, 6%);
-        }
-      }
-      
-      &.incomplete {
-        background: $list-secondary-color;
-        color: white;
-        
-        &:hover, &:active {
-          background: darken($list-secondary-color, 6%);
-        }
-      }
-      
-      //is-active
-      
-      &.all {
-        background: #eeeeee;
-        color: $primary-border-color;
-        
-        &:hover, &:active {
-          background: darken(#eeeeee, 6%);
-        }
-        
-        &.is-active {
-          background: white;
-          
-          & span {
-            background: #eeeeee;
-          }
-        }
-      }
-      
+
       & span {
+        width: 21px;
         margin-left: 10px;
+        padding: 5px 0;
         font-family: sans-serif;
         font-size: .7em;
         font-weight: bold;
         display: inline-block;
-        padding: 4px;
-        background: white;
-        color: $primary-border-color;
+        background: #D96D32;
+        color: #FFFFFF;
         line-height: 1em;
+        @include border-radius(1em);
       }
+
+      &.all, &.all {
+        @include nav-item-color(#D96D32);
+      }
+
+      &.complete {
+        @include nav-item-color(#2A7D75);
+      }
+
+      &.incomplete {
+        @include nav-item-color(#D92042);
+      }
+      // TODO: Make mixin/function to abstract
+      //       out nav filter css      
     }
     
     @media (min-width: $bp-narrow-plus-1) {

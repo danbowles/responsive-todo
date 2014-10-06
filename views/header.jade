@@ -9,10 +9,10 @@ header
       img(src='assets/hamburger-icon-32.svg')
   nav
     ul
-      li: a.all.is-active(href='#/all') All Tasks
+      li: a.all(href='#/all', ng-class='{active: isActive("/all")}') All Tasks
         span {{todos.length}}
-      li: a.incomplete(href='#/incomplete') Incomplete
+      li: a.incomplete(href='#/incomplete', ng-class='{active: isActive("/incomplete")}') Incomplete
         span {{incompleteCount}}
-      li: a.complete(href='#/complete') Completed
+      li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}') Completed
         span {{completeCount}}
   h1.list-title to do list

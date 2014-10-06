@@ -1,0 +1,28 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+@mixin shaded-circle($diameter, $background, $shadow, $hoverable: false) {
+  $shadow-y: $diameter * 0.12;
+  background: $background;
+  height: $diameter;
+  width: $diameter;
+  line-height: $diameter;
+  text-align: center;
+  @include border-radius($diameter / 2);
+  @include box-shadow(0 #{$shadow-y} $shadow);
+}
+
+@mixin nav-item-color($color) {
+  span, &:hover, &.active {
+    background: $color;
+  }
+
+  &:hover span, &.active span {
+    color: $color;
+    background: #ffffff;
+  }
+}

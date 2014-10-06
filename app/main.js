@@ -12,7 +12,6 @@ var todoList = require('../routes/todoList');
 var routes   = require('../routes/index');
 var app      = express();
 
-
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'jade');
 
@@ -28,32 +27,6 @@ database.connect();
 app.use('/', routes);
 app.use('/api', todoList);
 
-// 404 Error page setup
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// Error page + Stacktrace for dev
-if (app.get('env') == 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// Production Error page
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
-
+// TODO handle errors
 
 module.exports = app;

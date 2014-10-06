@@ -86,4 +86,9 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $fil
     $scope.newTodo = '';
     $scope.todos.push(newTodo);
   };
+
+  // Navigation
+  $scope.isActive = function(path) {
+    return path === $scope.location.path();
+  };
 });

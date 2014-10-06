@@ -1,3 +1,15 @@
+/* palette - 
+  #D96D32 - All
+  #2A7D75 - Incomplete
+  #D92042 - Complete
+
+  #B4B565 - Nav Bg
+
+  #416675 - Add Task Btn Bg
+
+  #294C5D - To name
+
+*/
 /* line 2, ../../../sass/partials/_reset.scss */
 html {
   font-family: sans-serif;
@@ -262,7 +274,7 @@ ul, ol {
   position: absolute;
   right: 0;
   top: 0;
-  background: #b89335;
+  background: #416675;
   color: white;
   height: 47px;
   width: 45px;
@@ -297,22 +309,22 @@ ul, ol {
   box-sizing: border-box;
   font-size: 1.4em;
 }
-/* line 2, ../../../sass/styles.scss */
+/* line 2, ../../../sass/partials/_mixins.scss */
 #task-entry input::-webkit-input-placeholder {
   color: #676767;
   font-style: italic;
 }
-/* line 3, ../../../sass/styles.scss */
+/* line 3, ../../../sass/partials/_mixins.scss */
 #task-entry input:-moz-placeholder {
   color: #676767;
   font-style: italic;
 }
-/* line 4, ../../../sass/styles.scss */
+/* line 4, ../../../sass/partials/_mixins.scss */
 #task-entry input::-moz-placeholder {
   color: #676767;
   font-style: italic;
 }
-/* line 5, ../../../sass/styles.scss */
+/* line 5, ../../../sass/partials/_mixins.scss */
 #task-entry input:-ms-input-placeholder {
   color: #676767;
   font-style: italic;
@@ -373,16 +385,12 @@ nav {
   top: 51px;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid #99a3a5;
-  background: #eeeeee;
+  background: #b4b565;
   display: none;
 }
-/* line 42, ../../../sass/partials/_navigation.scss */
+/* line 41, ../../../sass/partials/_navigation.scss */
 .show-nav nav {
   display: block;
-  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 @media (min-width: 37.5em) {
   /* line 32, ../../../sass/partials/_navigation.scss */
@@ -391,85 +399,79 @@ nav {
     position: fixed;
     z-index: 1;
     display: block;
-    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   }
 }
-/* line 56, ../../../sass/partials/_navigation.scss */
+/* line 53, ../../../sass/partials/_navigation.scss */
 nav ul {
   margin: 0 auto;
 }
 @media (min-width: 37.5em) {
-  /* line 56, ../../../sass/partials/_navigation.scss */
+  /* line 53, ../../../sass/partials/_navigation.scss */
   nav ul {
     max-width: 550px;
   }
 }
-/* line 65, ../../../sass/partials/_navigation.scss */
+/* line 62, ../../../sass/partials/_navigation.scss */
 nav li a {
   display: block;
   position: relative;
-  color: #99a3a5;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2.5em;
-  background: #eeeeee;
+}
+/* line 71, ../../../sass/partials/_navigation.scss */
+nav li a:hover span {
+  background: #ffffff;
 }
 /* line 75, ../../../sass/partials/_navigation.scss */
-nav li a:hover, nav li a:active {
-  background: #e1e1e1;
-}
-/* line 81, ../../../sass/partials/_navigation.scss */
-nav li a.complete {
-  background: #838e90;
-  color: white;
-}
-/* line 85, ../../../sass/partials/_navigation.scss */
-nav li a.complete:hover, nav li a.complete:active {
-  background: #737f81;
-}
-/* line 90, ../../../sass/partials/_navigation.scss */
-nav li a.incomplete {
-  background: #b89335;
-  color: white;
-}
-/* line 94, ../../../sass/partials/_navigation.scss */
-nav li a.incomplete:hover, nav li a.incomplete:active {
-  background: #a0802e;
-}
-/* line 101, ../../../sass/partials/_navigation.scss */
-nav li a.all {
-  background: #eeeeee;
-  color: #99a3a5;
-}
-/* line 105, ../../../sass/partials/_navigation.scss */
-nav li a.all:hover, nav li a.all:active {
-  background: #dfdfdf;
-}
-/* line 109, ../../../sass/partials/_navigation.scss */
-nav li a.all.is-active {
-  background: white;
-}
-/* line 112, ../../../sass/partials/_navigation.scss */
-nav li a.all.is-active span {
-  background: #eeeeee;
-}
-/* line 118, ../../../sass/partials/_navigation.scss */
 nav li a span {
+  width: 21px;
   margin-left: 10px;
+  padding: 5px 0;
   font-family: sans-serif;
   font-size: .7em;
   font-weight: bold;
   display: inline-block;
-  padding: 4px;
-  background: white;
-  color: #99a3a5;
+  background: #D96D32;
+  color: #FFFFFF;
   line-height: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+}
+/* line 20, ../../../sass/partials/_mixins.scss */
+nav li a.all span, nav li a.all:hover, nav li a.all.active, nav li a.all span, nav li a.all:hover, nav li a.all.active {
+  background: #d96d32;
+}
+/* line 24, ../../../sass/partials/_mixins.scss */
+nav li a.all:hover span, nav li a.all.active span, nav li a.all:hover span, nav li a.all.active span {
+  color: #d96d32;
+  background: #ffffff;
+}
+/* line 20, ../../../sass/partials/_mixins.scss */
+nav li a.complete span, nav li a.complete:hover, nav li a.complete.active {
+  background: #2a7d75;
+}
+/* line 24, ../../../sass/partials/_mixins.scss */
+nav li a.complete:hover span, nav li a.complete.active span {
+  color: #2a7d75;
+  background: #ffffff;
+}
+/* line 20, ../../../sass/partials/_mixins.scss */
+nav li a.incomplete span, nav li a.incomplete:hover, nav li a.incomplete.active {
+  background: #d92042;
+}
+/* line 24, ../../../sass/partials/_mixins.scss */
+nav li a.incomplete:hover span, nav li a.incomplete.active span {
+  color: #d92042;
+  background: #ffffff;
 }
 @media (min-width: 37.5em) {
-  /* line 64, ../../../sass/partials/_navigation.scss */
+  /* line 61, ../../../sass/partials/_navigation.scss */
   nav li {
     float: left;
     width: 33.333333333%;
@@ -548,28 +550,28 @@ nav li a span {
 }
 /* line 69, ../../../sass/partials/_list.scss */
 .list-content ol > li:before {
+  display: inline-block;
   position: relative;
+  float: left;
+  font-weight: bold;
+  color: white;
+  counter-increment: counter;
+  content: counter(counter,decimal-leading-zero);
   background: #b89335;
   height: 2em;
   width: 2em;
   line-height: 2em;
   text-align: center;
-  font-weight: bold;
-  color: white;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  -ms-border-radius: 2em;
-  -o-border-radius: 2em;
-  border-radius: 2em;
-  -webkit-box-shadow: 0 5px 0 #e4d1a2;
-  -moz-box-shadow: 0 5px 0 #e4d1a2;
-  box-shadow: 0 5px 0 #e4d1a2;
-  display: inline-block;
-  counter-increment: counter;
-  content: counter(counter,decimal-leading-zero);
-  float: left;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 0.24em #e4d1a2;
+  -moz-box-shadow: 0 0.24em #e4d1a2;
+  box-shadow: 0 0.24em #e4d1a2;
 }
-/* line 86, ../../../sass/partials/_list.scss */
+/* line 80, ../../../sass/partials/_list.scss */
 .list-content ol > li span {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.2em;
@@ -578,11 +580,11 @@ nav li a span {
   margin: 0 2.5em;
   padding: 0 10px 10px;
 }
-/* line 95, ../../../sass/partials/_list.scss */
+/* line 89, ../../../sass/partials/_list.scss */
 .list-content ol > li input[type=checkbox] {
   visibility: hidden;
 }
-/* line 99, ../../../sass/partials/_list.scss */
+/* line 93, ../../../sass/partials/_list.scss */
 .list-content ol > li label {
   cursor: pointer;
   position: absolute;
@@ -594,7 +596,7 @@ nav li a span {
   border: 3px solid #b89335;
   background: transparent;
 }
-/* line 110, ../../../sass/partials/_list.scss */
+/* line 104, ../../../sass/partials/_list.scss */
 .list-content ol > li label:after {
   content: '';
   position: absolute;
@@ -613,22 +615,22 @@ nav li a span {
   background: transparent;
   opacity: 0;
 }
-/* line 126, ../../../sass/partials/_list.scss */
+/* line 120, ../../../sass/partials/_list.scss */
 .list-content ol > li input[type=checkbox]:checked + label:after {
   opacity: 1;
 }
-/* line 130, ../../../sass/partials/_list.scss */
+/* line 124, ../../../sass/partials/_list.scss */
 .list-content ol > li .modify {
   display: none;
   margin: 0 0 0 3em;
 }
-/* line 137, ../../../sass/partials/_list.scss */
+/* line 131, ../../../sass/partials/_list.scss */
 .list-content .done-checkbox {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 143, ../../../sass/partials/_list.scss */
+/* line 137, ../../../sass/partials/_list.scss */
 .list-content input.edit {
   font-family: 'Gloria Hallelujah', cursive;
   color: #444;
@@ -641,19 +643,14 @@ nav li a span {
   box-sizing: border-box;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4) inset;
 }
-/* line 156, ../../../sass/partials/_list.scss */
+/* line 150, ../../../sass/partials/_list.scss */
 .list-content button.delete {
-  background: #b83535;
-  box-shadow: 0 4px 0 #e4a2a2;
+  position: absolute;
+  top: 0;
+  right: 0;
   color: white;
   border: none;
-  border-radius: 2.8em;
-  width: 2.5em;
-  height: 2.5em;
   font-size: 1.2em;
-  position: absolute;
-  right: 0;
-  top: 0;
   outline: none;
   white-space: nowrap;
   -webkit-transition: all ease-in-out;
@@ -661,31 +658,43 @@ nav li a span {
   -moz-transition: all ease-in-out 0.2s;
   -o-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
+  background: #255c74;
+  height: 2.5em;
+  width: 2.5em;
+  line-height: 2.5em;
+  text-align: center;
+  -webkit-border-radius: 1.25em;
+  -moz-border-radius: 1.25em;
+  -ms-border-radius: 1.25em;
+  -o-border-radius: 1.25em;
+  border-radius: 1.25em;
+  -webkit-box-shadow: 0 0.3em #64aece;
+  -moz-box-shadow: 0 0.3em #64aece;
+  box-shadow: 0 0.3em #64aece;
 }
-/* line 172, ../../../sass/partials/_list.scss */
+/* line 162, ../../../sass/partials/_list.scss */
 .list-content button.delete:hover {
-  background: #d97a7a;
-  box-shadow: 0 4px 0 #e4a2a2, 0 0 35px #b83535 inset;
+  background: #a42f2f;
 }
 
-/* line 38, ../../../sass/styles.scss */
+/* line 49, ../../../sass/styles.scss */
 body {
   background: white;
 }
 @media (min-width: 37.5em) {
-  /* line 38, ../../../sass/styles.scss */
+  /* line 49, ../../../sass/styles.scss */
   body {
     background: #dfdcd3;
   }
 }
 
-/* line 47, ../../../sass/styles.scss */
+/* line 58, ../../../sass/styles.scss */
 #main {
   margin: 0 auto;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 @media (min-width: 37.5em) {
-  /* line 47, ../../../sass/styles.scss */
+  /* line 58, ../../../sass/styles.scss */
   #main {
     width: 60%;
     margin-top: 120px;
@@ -701,20 +710,20 @@ body {
     box-shadow: 0 0 1px #cfd4d5 inset;
   }
 }
-/* line 60, ../../../sass/styles.scss */
+/* line 71, ../../../sass/styles.scss */
 #main header {
   position: relative;
 }
-/* line 64, ../../../sass/styles.scss */
+/* line 75, ../../../sass/styles.scss */
 #main footer {
   text-align: center;
   color: #838e90;
 }
-/* line 68, ../../../sass/styles.scss */
+/* line 79, ../../../sass/styles.scss */
 #main footer a {
   color: #b89335;
 }
-/* line 73, ../../../sass/styles.scss */
+/* line 84, ../../../sass/styles.scss */
 #main .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -726,7 +735,7 @@ body {
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 73, ../../../sass/styles.scss */
+  /* line 84, ../../../sass/styles.scss */
   #main .list-title {
     font-size: 3.2em;
     padding-top: 75px;
@@ -734,7 +743,7 @@ body {
   }
 }
 @media (min-width: 37.5em) {
-  /* line 73, ../../../sass/styles.scss */
+  /* line 84, ../../../sass/styles.scss */
   #main .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;
