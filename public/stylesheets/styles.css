@@ -263,10 +263,10 @@ ul, ol {
   /* line 1, ../../sass/partials/_task-entry.scss */
   #task-entry {
     width: 100%;
-    background: #eeeeee;
+    background: #FFFFFF;
     right: -1px;
-    border: 1px solid #99a3a5;
-    top: -87px;
+    top: -92px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   }
 }
 /* line 16, ../../sass/partials/_task-entry.scss */
@@ -355,7 +355,7 @@ ul, ol {
   height: 45px;
   width: 45px;
   text-align: center;
-  background: #FFFFFF;
+  background: #F9F9F9;
   border-right: 1px solid #99a3a5;
 }
 /* line 12, ../../sass/partials/_navigation.scss */
@@ -375,13 +375,12 @@ ul, ol {
     width: 100%;
     box-sizing: border-box;
     top: 0;
-    background: #eeeeee;
     border-bottom: 1px solid #99a3a5;
     display: block;
   }
 }
 
-/* line 34, ../../sass/partials/_navigation.scss */
+/* line 33, ../../sass/partials/_navigation.scss */
 nav {
   position: absolute;
   left: 0;
@@ -389,14 +388,13 @@ nav {
   width: 100%;
   text-align: center;
   display: none;
-  background: #FFFFFF;
 }
-/* line 43, ../../sass/partials/_navigation.scss */
+/* line 41, ../../sass/partials/_navigation.scss */
 .show-nav nav {
   display: block;
 }
 @media (min-width: 37.5em) {
-  /* line 34, ../../sass/partials/_navigation.scss */
+  /* line 33, ../../sass/partials/_navigation.scss */
   nav {
     top: 0;
     position: fixed;
@@ -404,17 +402,17 @@ nav {
     display: block;
   }
 }
-/* line 54, ../../sass/partials/_navigation.scss */
+/* line 52, ../../sass/partials/_navigation.scss */
 nav ul {
   margin: 0 auto;
 }
 @media (min-width: 37.5em) {
-  /* line 54, ../../sass/partials/_navigation.scss */
+  /* line 52, ../../sass/partials/_navigation.scss */
   nav ul {
     max-width: 550px;
   }
 }
-/* line 63, ../../sass/partials/_navigation.scss */
+/* line 61, ../../sass/partials/_navigation.scss */
 nav li a {
   display: block;
   position: relative;
@@ -425,11 +423,11 @@ nav li a {
   background: white;
   transition: all ease-in-out 0.2s;
 }
-/* line 73, ../../sass/partials/_navigation.scss */
+/* line 71, ../../sass/partials/_navigation.scss */
 nav li a:hover span {
   background: #ffffff;
 }
-/* line 77, ../../sass/partials/_navigation.scss */
+/* line 75, ../../sass/partials/_navigation.scss */
 nav li a .count {
   width: 21px;
   margin-left: 10px;
@@ -443,7 +441,7 @@ nav li a .count {
   border-radius: 1em;
   transition: all ease-in-out 0.2s;
 }
-/* line 91, ../../sass/partials/_navigation.scss */
+/* line 89, ../../sass/partials/_navigation.scss */
 nav li a.all {
   color: #d96d32;
 }
@@ -455,13 +453,14 @@ nav li a.all .count {
 nav li a.all.active, nav li a.all:hover {
   color: #FFFFFF;
   background: #d96d32;
+  box-shadow: 0 2px 5px rgba(182, 86, 34, 0.3);
 }
-/* line 28, ../../sass/partials/_mixins.scss */
+/* line 29, ../../sass/partials/_mixins.scss */
 nav li a.all.active .count, nav li a.all:hover .count {
   background: #FFFFFF;
   color: #d96d32;
 }
-/* line 95, ../../sass/partials/_navigation.scss */
+/* line 93, ../../sass/partials/_navigation.scss */
 nav li a.complete {
   color: #2a7d75;
 }
@@ -473,13 +472,14 @@ nav li a.complete .count {
 nav li a.complete.active, nav li a.complete:hover {
   color: #FFFFFF;
   background: #2a7d75;
+  box-shadow: 0 2px 5px rgba(29, 87, 81, 0.3);
 }
-/* line 28, ../../sass/partials/_mixins.scss */
+/* line 29, ../../sass/partials/_mixins.scss */
 nav li a.complete.active .count, nav li a.complete:hover .count {
   background: #FFFFFF;
   color: #2a7d75;
 }
-/* line 99, ../../sass/partials/_navigation.scss */
+/* line 97, ../../sass/partials/_navigation.scss */
 nav li a.incomplete {
   color: #d92042;
 }
@@ -491,23 +491,28 @@ nav li a.incomplete .count {
 nav li a.incomplete.active, nav li a.incomplete:hover {
   color: #FFFFFF;
   background: #d92042;
+  box-shadow: 0 2px 5px rgba(173, 25, 52, 0.3);
 }
-/* line 28, ../../sass/partials/_mixins.scss */
+/* line 29, ../../sass/partials/_mixins.scss */
 nav li a.incomplete.active .count, nav li a.incomplete:hover .count {
   background: #FFFFFF;
   color: #d92042;
 }
-/* line 104, ../../sass/partials/_navigation.scss */
+/* line 102, ../../sass/partials/_navigation.scss */
 nav li:last-child {
   box-shadow: 0 0 40px;
 }
 @media (min-width: 37.5em) {
-  /* line 62, ../../sass/partials/_navigation.scss */
+  /* line 60, ../../sass/partials/_navigation.scss */
   nav li {
     float: left;
     width: 33.333333333%;
   }
-  /* line 112, ../../sass/partials/_navigation.scss */
+  /* line 109, ../../sass/partials/_navigation.scss */
+  nav li a {
+    background: transparent;
+  }
+  /* line 113, ../../sass/partials/_navigation.scss */
   nav li:last-child {
     box-shadow: none;
   }
@@ -704,12 +709,12 @@ nav li:last-child {
 
 /* line 52, ../../sass/styles.scss */
 body {
-  background: white;
+  background: #FFFFFF;
 }
 @media (min-width: 37.5em) {
   /* line 52, ../../sass/styles.scss */
   body {
-    background: white;
+    background: #F9F9F9;
   }
 }
 
@@ -722,33 +727,31 @@ body {
   /* line 61, ../../sass/styles.scss */
   #main {
     width: 60%;
-    margin-top: 130px;
+    margin-top: 140px;
     max-width: 550px;
-    border: 1px solid #99a3a5;
+    border: 1px solid #DDDDDD;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0 0 1px #cfd4d5 inset;
-    -moz-box-shadow: 0 0 1px #cfd4d5 inset;
-    box-shadow: 0 0 1px #cfd4d5 inset;
+    box-shadow: 0 0 1px #cfd4d5 inset, 0 3px 7px rgba(0, 0, 0, 0.4);
   }
 }
-/* line 74, ../../sass/styles.scss */
+/* line 75, ../../sass/styles.scss */
 #main header {
   position: relative;
 }
-/* line 78, ../../sass/styles.scss */
+/* line 79, ../../sass/styles.scss */
 #main footer {
   text-align: center;
   color: #838e90;
 }
-/* line 82, ../../sass/styles.scss */
+/* line 83, ../../sass/styles.scss */
 #main footer a {
   color: #b89335;
 }
-/* line 87, ../../sass/styles.scss */
+/* line 88, ../../sass/styles.scss */
 #main .list-title {
   padding: 0 4%;
   font-size: 2.4em;
@@ -760,7 +763,7 @@ body {
   text-shadow: 0.01em 0.01em 0px white, 0.08em 0.08em 0px #dec88e;
 }
 @media (min-width: 28em) {
-  /* line 87, ../../sass/styles.scss */
+  /* line 88, ../../sass/styles.scss */
   #main .list-title {
     font-size: 3.2em;
     padding-top: 75px;
@@ -768,7 +771,7 @@ body {
   }
 }
 @media (min-width: 37.5em) {
-  /* line 87, ../../sass/styles.scss */
+  /* line 88, ../../sass/styles.scss */
   #main .list-title {
     font-size: 4em;
     text-shadow: 1px 1px 0px white, 5px 5px 0px #dec88e;
