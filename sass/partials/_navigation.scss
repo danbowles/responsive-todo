@@ -89,18 +89,16 @@ nav {
       }
 
       &.all {
-        @include nav-item-color(#D96D32);
+        @include nav-item-color($status-all);
       }
 
       &.complete {
-        @include nav-item-color(#2A7D75);
+        @include nav-item-color($status-complete);
       }
 
       &.incomplete {
-        @include nav-item-color(#D92042);
+        @include nav-item-color($status-incomplete);
       }
-      // TODO: Make mixin/function to abstract
-      //       out nav filter css      
     }
     
     &:last-child {

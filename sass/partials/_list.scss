@@ -74,7 +74,12 @@ $list-item-text-color: #444444;
         color: white;
         counter-increment: counter;
         content: counter(counter, decimal-leading-zero);
-        @include shaded-circle(2em, $list-secondary-color);
+        @include shaded-circle(2em, $status-incomplete);
+        transition: background ease-in-out 0.2s;
+      }
+      
+      &.complete:before {
+        background: $status-complete;
       }
       
       span {

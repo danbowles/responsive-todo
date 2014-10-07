@@ -21,7 +21,7 @@ $list-secondary-shadow: lighten($list-secondary-color, 25%); //#B1BFC0;
 $primary-border-color: #99A3A5;
 $secondary-border-color: lighten($primary-border-color, 15%);
 
-$add-task-button-background: $list-secondary-color;
+$add-task-button-background: #416675;
 $add-task-button-color: #FFFFFF;
 
 $delete-button-background: #B83535;
@@ -29,6 +29,10 @@ $delete-button-background: #B83535;
 $nav-background: #FFFFFF; 
 $nav-hamburger-background: #416675;
 $nav-item-color: #FFFFFF;
+
+$status-all: #D96D32;
+$status-incomplete: #D92042; 
+$status-complete: #2A7D75;
 
 // Breakpoints
 $bp-narrow: 28em;
