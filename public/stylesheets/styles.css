@@ -518,18 +518,18 @@ nav li:last-child {
   }
 }
 
-/* line 3, ../../sass/partials/_list.scss */
+/* line 6, ../../sass/partials/_list.scss */
 .list-content {
   padding: 0 2%;
   margin-bottom: 2em;
 }
 @media (min-width: 28em) {
-  /* line 3, ../../sass/partials/_list.scss */
+  /* line 6, ../../sass/partials/_list.scss */
   .list-content {
     padding: 0 4%;
   }
 }
-/* line 11, ../../sass/partials/_list.scss */
+/* line 14, ../../sass/partials/_list.scss */
 .list-content h3 {
   border: 2px solid #99a3a5;
   border-width: 2px 0;
@@ -540,12 +540,12 @@ nav li:last-child {
   letter-spacing: 0.04em;
 }
 @media (min-width: 28em) {
-  /* line 11, ../../sass/partials/_list.scss */
+  /* line 14, ../../sass/partials/_list.scss */
   .list-content h3 {
     font-size: 1.5em;
   }
 }
-/* line 24, ../../sass/partials/_list.scss */
+/* line 27, ../../sass/partials/_list.scss */
 .list-content h3 span {
   margin: 2px 0;
   padding: 6px 0;
@@ -553,42 +553,42 @@ nav li:last-child {
   border: 1px dashed #c2c8c9;
   border-width: 1px 0;
 }
-/* line 33, ../../sass/partials/_list.scss */
+/* line 36, ../../sass/partials/_list.scss */
 .list-content h5 {
   color: #99a3a5;
   margin: -12px 0 2px;
   text-align: right;
 }
-/* line 39, ../../sass/partials/_list.scss */
+/* line 42, ../../sass/partials/_list.scss */
 .list-content ol {
   margin: 0;
   padding: 0;
   counter-reset: counter;
 }
-/* line 44, ../../sass/partials/_list.scss */
+/* line 47, ../../sass/partials/_list.scss */
 .list-content ol > li {
   position: relative;
   padding: 12px 12px 0;
   margin-bottom: 5px;
   color: #444444;
 }
-/* line 50, ../../sass/partials/_list.scss */
+/* line 53, ../../sass/partials/_list.scss */
 .list-content ol > li.complete {
   color: #aaaaaa;
 }
-/* line 53, ../../sass/partials/_list.scss */
+/* line 56, ../../sass/partials/_list.scss */
 .list-content ol > li.complete span {
   text-decoration: line-through;
 }
-/* line 59, ../../sass/partials/_list.scss */
+/* line 62, ../../sass/partials/_list.scss */
 .list-content ol > li.editing .modify {
   display: block;
 }
-/* line 64, ../../sass/partials/_list.scss */
+/* line 67, ../../sass/partials/_list.scss */
 .list-content ol > li.editing .view {
   display: none;
 }
-/* line 69, ../../sass/partials/_list.scss */
+/* line 72, ../../sass/partials/_list.scss */
 .list-content ol > li:before {
   display: inline-block;
   position: relative;
@@ -605,11 +605,11 @@ nav li:last-child {
   border-radius: 1em;
   transition: background ease-in-out 0.2s;
 }
-/* line 81, ../../sass/partials/_list.scss */
+/* line 84, ../../sass/partials/_list.scss */
 .list-content ol > li.complete:before {
   background: #2a7d75;
 }
-/* line 85, ../../sass/partials/_list.scss */
+/* line 88, ../../sass/partials/_list.scss */
 .list-content ol > li span {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1.2em;
@@ -618,11 +618,11 @@ nav li:last-child {
   margin: 0 2.5em;
   padding: 0 10px 10px;
 }
-/* line 94, ../../sass/partials/_list.scss */
+/* line 97, ../../sass/partials/_list.scss */
 .list-content ol > li input[type=checkbox] {
   visibility: hidden;
 }
-/* line 98, ../../sass/partials/_list.scss */
+/* line 101, ../../sass/partials/_list.scss */
 .list-content ol > li label {
   cursor: pointer;
   position: absolute;
@@ -631,10 +631,10 @@ nav li:last-child {
   width: 30px;
   right: 9px;
   top: 9px;
-  border: 3px solid #b89335;
-  background: transparent;
+  border: 3px solid #99a3a5;
+  transition: all ease-in-out 0.2s;
 }
-/* line 109, ../../sass/partials/_list.scss */
+/* line 112, ../../sass/partials/_list.scss */
 .list-content ol > li label:after {
   content: '';
   position: absolute;
@@ -648,27 +648,46 @@ nav li:last-child {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  border: 2px solid #838e90;
+  border: 2px solid transparent;
   border-width: 0 5px 5px 0;
-  background: transparent;
   opacity: 0;
+  transition: all ease-in-out 0.2s;
 }
-/* line 125, ../../sass/partials/_list.scss */
+/* line 127, ../../sass/partials/_list.scss */
+.list-content ol > li label:hover {
+  border-color: #2a7d75;
+  border-radius: 50%;
+}
+/* line 131, ../../sass/partials/_list.scss */
+.list-content ol > li label:hover:after {
+  border-color: #DDDDDD;
+  opacity: 1.0;
+}
+/* line 138, ../../sass/partials/_list.scss */
+.list-content ol > li.complete label {
+  border-color: #2a7d75;
+  border-radius: 50%;
+}
+/* line 142, ../../sass/partials/_list.scss */
+.list-content ol > li.complete label:after {
+  border-color: #2a7d75;
+}
+/* line 151, ../../sass/partials/_list.scss */
 .list-content ol > li input[type=checkbox]:checked + label:after {
   opacity: 1;
 }
-/* line 129, ../../sass/partials/_list.scss */
+/* line 155, ../../sass/partials/_list.scss */
 .list-content ol > li .modify {
   display: none;
   margin: 0 0 0 3em;
 }
-/* line 136, ../../sass/partials/_list.scss */
+/* line 162, ../../sass/partials/_list.scss */
 .list-content .done-checkbox {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 142, ../../sass/partials/_list.scss */
+/* line 168, ../../sass/partials/_list.scss */
 .list-content input.edit {
   font-family: 'Gloria Hallelujah', cursive;
   color: #444;
@@ -681,7 +700,7 @@ nav li:last-child {
   box-sizing: border-box;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4) inset;
 }
-/* line 155, ../../sass/partials/_list.scss */
+/* line 181, ../../sass/partials/_list.scss */
 .list-content button.delete {
   position: absolute;
   top: 0;
@@ -702,7 +721,7 @@ nav li:last-child {
   text-align: center;
   border-radius: 1.25em;
 }
-/* line 166, ../../sass/partials/_list.scss */
+/* line 192, ../../sass/partials/_list.scss */
 .list-content button.delete:hover {
   background: #a42f2f;
 }
