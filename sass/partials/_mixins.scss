@@ -24,6 +24,7 @@
   &.active, &:hover {
     color: #FFFFFF;
     background: $color;
+    box-shadow: 0 2px 5px rgba(darken($color, 10%), 0.3);
 
     .count {
       background: #FFFFFF;

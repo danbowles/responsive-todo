@@ -50,10 +50,10 @@ $bp-narrow-plus-1: 37.5em;
 @import "partials/list";
 
 body {
-  background: white;
+  background: #FFFFFF;
   
   @media (min-width: $bp-narrow-plus-1) {
-    background: $main-background;
+    background: #F9F9F9;
   }
 }
 
@@ -64,11 +64,12 @@ body {
   
   @media (min-width: $bp-narrow-plus-1) {
     width: 60%;
-    margin-top: 130px;
+    margin-top: 140px;
     max-width: 550px;
-    border: 1px solid $primary-border-color;
+    border: 1px solid #DDDDDD;
     @include border-radius(2px);
-    @include box-shadow(0 0 1px lighten($primary-border-color,20%) inset);
+    box-shadow: 0 0 1px lighten($primary-border-color,20%) inset,
+      0 3px 7px rgba(#000000, 0.4);
   }
   
   header {

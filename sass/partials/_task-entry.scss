@@ -7,10 +7,10 @@
     
     @media (min-width: $bp-narrow-plus-1) {
       width: 100%;
-      background: #eeeeee;
+      background: #FFFFFF;
       right: -1px;
-      border: 1px solid $primary-border-color;
-      top: -87px;
+      top: -92px;
+      box-shadow: 0 2px 5px rgba(#000000, 0.4);
     }
     
     button {
