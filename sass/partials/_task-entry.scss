@@ -19,14 +19,15 @@
       top: 0;
       background: #416675;
       color: $add-task-button-color;
-      height: 47px;
+      height: 46px;
       width: 45px;
       font-weight: bold;
       border: none;
-      font-size: 1.3em;
+      font-size: 2em;
       
       @media (min-width: $bp-narrow) {
         width: 85px;
+        font-size: 1.3em;
       }
       
       &>span {

@@ -9,7 +9,7 @@ section
           div.done-checkbox
             input(type='checkbox', ng-model='todo.done' id='todo-{{todo._id}}' ng-change='updateTodo(todo)')
             label(for='todo-{{todo._id}}')
-        div(class='modify')
+        div.modify
           form(ng-submit='finishEditing(todo)', ng-model='editingTodo')
-            input(class='edit', ng-model='todo.name')
-          button(class='delete', ng-click='removeTodo(todo)') &cross;
+            input.edit(ng-model='todo.name')
+          button.delete.fa.fa-remove(class='delete', ng-click='removeTodo(todo)')

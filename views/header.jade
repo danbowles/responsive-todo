@@ -6,13 +6,13 @@ header
         span &nbsp;Add
   div.go-to-nav
     a(href='#')
-      img(src='assets/hamburger-icon-32.svg')
+      i.fa.fa-2x.fa-bars
   nav
     ul
       li: a.all(href='#/all', ng-class='{active: isActive("/all")}') All Tasks
-        span {{todos.length}}
+        span.count {{todos.length}}
       li: a.incomplete(href='#/incomplete', ng-class='{active: isActive("/incomplete")}') Incomplete
-        span {{incompleteCount}}
+        span.count {{incompleteCount}}
       li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}') Completed
-        span {{completeCount}}
+        span.count {{completeCount}}
   h1.list-title to do list

@@ -5,17 +5,19 @@
     display: block;
     height: 45px;
     width: 45px;
-    background: $nav-hamburger-background;
-    
-    img {
-      margin: auto;
-      display: block;
-      padding-top: 6px;
+    text-align: center;
+    background: #FFFFFF;
+    border-right: 1px solid $primary-border-color;
+
+    .fa {
+      color: $nav-hamburger-background;
+      line-height: 45px;
+      transition: all ease-in-out 0.2s;
+
+      .show-nav & {
+        transform: rotate(90deg);
+      }
     }
-  }
-  
-  .show-nav & img {
-    @include transform(rotate(90deg));
   }
   
   @media(max-width: $bp-narrow-plus-1) {
@@ -32,16 +34,15 @@
 nav {
   position: absolute;
   left: 0;
-  top: 51px;
+  top: 46px;
   width: 100%;
   text-align: center;
-  background: $nav-background;
   display: none;
+  background: #FFFFFF;
 
   .show-nav & {
     display: block;
   }
-  
   
   @media(min-width: $bp-narrow-plus-1) {
     top: 0;
@@ -62,17 +63,18 @@ nav {
     a {
       display: block;
       position: relative;
-      color: $nav-item-color;
       text-decoration: none;
       font-weight: bold;
       text-transform: uppercase;
-      line-height: 2.5em;
+      line-height: 3em;
+      background: white;
+      transition: all ease-in-out 0.2s;
       
       &:hover span {
         background: #ffffff;
       }
 
-      & span {
+      & .count {
         width: 21px;
         margin-left: 10px;
         padding: 5px 0;
@@ -80,13 +82,13 @@ nav {
         font-size: .7em;
         font-weight: bold;
         display: inline-block;
-        background: #D96D32;
         color: #FFFFFF;
         line-height: 1em;
-        @include border-radius(1em);
+        border-radius: 1em;
+        transition: all ease-in-out 0.2s;
       }
 
-      &.all, &.all {
+      &.all {
         @include nav-item-color(#D96D32);
       }
 
@@ -101,9 +103,17 @@ nav {
       //       out nav filter css      
     }
     
+    &:last-child {
+      box-shadow: 0 0 40px;
+    }
+
     @media (min-width: $bp-narrow-plus-1) {
       float: left;
       width: 33.333333333%;
+
+      &:last-child {
+        box-shadow: none;
+      }
     }
   }
 }

@@ -5,24 +5,29 @@
   &:-ms-input-placeholder      {@content}  
 }
 
-@mixin shaded-circle($diameter, $background, $shadow, $hoverable: false) {
-  $shadow-y: $diameter * 0.12;
+@mixin shaded-circle($diameter, $background, $hoverable: false) {
   background: $background;
   height: $diameter;
   width: $diameter;
   line-height: $diameter;
   text-align: center;
-  @include border-radius($diameter / 2);
-  @include box-shadow(0 #{$shadow-y} $shadow);
+  border-radius: $diameter / 2;
 }
 
 @mixin nav-item-color($color) {
-  span, &:hover, &.active {
+  color: $color;
+
+  .count {
     background: $color;
   }
 
-  &:hover span, &.active span {
-    color: $color;
-    background: #ffffff;
+  &.active, &:hover {
+    color: #FFFFFF;
+    background: $color;
+
+    .count {
+      background: #FFFFFF;
+      color: $color;
+    }
   }
 }

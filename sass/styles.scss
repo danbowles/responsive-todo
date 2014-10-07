@@ -13,7 +13,7 @@
 
 */
 
-$main-background: #DFDCD3;
+$main-background: #FFFFFF;
 
 $list-primary-color: #838E90;
 $list-secondary-color: #B89335; //complement($list-primary-color);
@@ -25,10 +25,9 @@ $add-task-button-background: $list-secondary-color;
 $add-task-button-color: #FFFFFF;
 
 $delete-button-background: #B83535;
-$delete-button-background: #255C74;
 
-$nav-background: #B4B565; 
-$nav-hamburger-background: $list-primary-color;
+$nav-background: #FFFFFF; 
+$nav-hamburger-background: #416675;
 $nav-item-color: #FFFFFF;
 
 // Breakpoints
@@ -61,7 +60,7 @@ body {
   
   @media (min-width: $bp-narrow-plus-1) {
     width: 60%;
-    margin-top: 120px;
+    margin-top: 130px;
     max-width: 550px;
     border: 1px solid $primary-border-color;
     @include border-radius(2px);

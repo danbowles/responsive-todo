@@ -74,7 +74,7 @@ $list-item-text-color: #444444;
         color: white;
         counter-increment: counter;
         content: counter(counter, decimal-leading-zero);
-        @include shaded-circle(2em, $list-secondary-color, lighten($list-secondary-color,30%));
+        @include shaded-circle(2em, $list-secondary-color);
       }
       
       span {
@@ -153,14 +153,13 @@ $list-item-text-color: #444444;
     right: 0;
     color: white;
     border: none;
-    font-size: 1.2em;
     outline: none;
     white-space: nowrap;
     @include transition(all ease-in-out 0.2s);
-    @include shaded-circle(2.5em, $delete-button-background, lighten($delete-button-background,30%));
+    @include shaded-circle(2.5em, $delete-button-background);
 
     &:hover {
-      background: darken(#b83535, 5%);
+      background: darken($delete-button-background, 5%);
     }
   }
 }
