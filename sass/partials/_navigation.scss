@@ -3,15 +3,18 @@
   
   a {
     display: block;
-    height: 45px;
-    width: 45px;
+    height: 55px;
+    width: 55px;
     text-align: center;
-    background: #F9F9F9;
-    border-right: 1px solid $primary-border-color;
+    background: $nav-background-mobile;
+
+    &:hover {
+      background: lighten($nav-background-mobile, 5%);
+    }
 
     .fa {
       color: $nav-hamburger-background;
-      line-height: 45px;
+      line-height: 55px;
       transition: all ease-in-out 0.2s;
 
       .show-nav & {
@@ -25,15 +28,16 @@
     width: 100%;
     box-sizing: border-box;
     top: 0;
-    border-bottom: 1px solid $primary-border-color;
+    background: $nav-background-mobile;
     display: block;
+    box-shadow: 0 2px 5px rgba(#000000, 0.4);
   }
 }
 
 nav {
   position: absolute;
   left: 0;
-  top: 46px;
+  top: 55px;
   width: 100%;
   text-align: center;
   display: none;

@@ -10,7 +10,6 @@
       background: #FFFFFF;
       right: -1px;
       top: -92px;
-      box-shadow: 0 2px 5px rgba(#000000, 0.4);
     }
     
     button {
@@ -19,32 +18,41 @@
       top: 0;
       background: $add-task-button-background;
       color: $add-task-button-color;
-      height: 46px;
-      width: 45px;
+      height: 55px;
+      width: 55px;
       font-weight: bold;
       border: none;
-      font-size: 2em;
+      font-size: 1.3em;
       
       &:hover {
         background: lighten($add-task-button-background, 5%);
       }
 
-      @media (min-width: $bp-narrow) {
+      @media (min-width: $bp-narrow-plus-1) {
+        height: 45px;
         width: 85px;
-        font-size: 1.3em;
       }
 
       
       &>span {
         display: none;
         
-        @media (min-width: $bp-narrow) {
+        @media (min-width: $bp-narrow-plus-1) {
           display: inline;
         }
       }
     }
     
     input {
+      width: 96%;
+      margin-top: 9px;
+      padding: 6px 57px 6px 6px;
+      border: none;
+      background: #FFFFFF;
+      @include box-sizing(border-box);
+      transition: box-shadow ease-in-out 0.1s;
+      font-size: 1.2em;
+      
       @include placeholder {
         color: #676767;
         font-style: italic;
@@ -53,16 +61,21 @@
       &:focus {
         outline: none;
       }
-
-      width: 100%;
-      border: none;
-      padding: 11px 57px 12px 5%;
-      background: transparent;
-      @include box-sizing(border-box);
-      font-size: 1.4em;
       
       @media (min-width: $bp-narrow) {
         padding-right: 97px;
+      }
+
+      @media (min-width: $bp-narrow-plus-1) {
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+        padding: 11px 57px 11px 5%;
+        box-shadow: 0 2px 5px rgba(#000000, 0.4);
+        
+        &:focus {
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.42);
+        }
       }
     }
   }

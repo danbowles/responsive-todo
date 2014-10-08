@@ -11,34 +11,17 @@ $list-item-text-color: #444444;
     padding: 0 4%;
   }
   
-  h3 {
-    border: 2px solid $primary-border-color;
-    border-width: 2px 0;
-    color: $list-secondary-color;
+  .empty-list {
     text-align: center;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    
-    @media (min-width: $bp-narrow) {
-      font-size: 1.5em;
-    }
-    
-    span {
-      margin: 2px 0;
-      padding: 6px 0;
-      display: block;
-      border: 1px dashed $secondary-border-color;
-      border-width: 1px 0;
+    color: #999999;
+
+    .fa {
+      color: lighten($status-all, 25%);
+      text-shadow: 1px 1px 0 #FFFFFF,
+        2px 2px 0 #CCCCCC;
     }
   }
-  
-  h5 {
-    color: $primary-border-color;
-    margin: -12px 0 2px;
-    text-align: right;
-  }
-  
+
   ol {
     margin: 0;
     padding: 0;
@@ -63,9 +46,12 @@ $list-item-text-color: #444444;
           display: block;
         }
 
-        .view
-         {
+        .view {
           display: none;
+        }
+
+        &:before {
+          visibility: hidden;
         }
       }
       
@@ -74,21 +60,29 @@ $list-item-text-color: #444444;
         position: relative;
         float: left;
         font-weight: bold;
-        color: white;
+        color: $status-incomplete;
         counter-increment: counter;
         content: counter(counter, decimal-leading-zero);
-        @include shaded-circle(2em, $status-incomplete);
-        transition: background ease-in-out 0.2s;
+        @include shaded-circle(28px, #FFFFFF);
+        line-height: 28px;
+        border: 2px solid $status-incomplete; 
+        transition: background ease-in-out 0.2s,
+          color ease-in-out 0.2s;
       }
       
       &.complete:before {
         background: $status-complete;
+        line-height: 2em;
+        height: 2em;
+        width: 2em;
+        color: #FFFFFF;
+        border: none;
       }
       
       span {
         font-family: 'Gloria Hallelujah', cursive;
         font-size: 1.2em;
-        border-bottom: 1px solid #99A3A5;
+        border-bottom: 3px solid #CCCCCC;
         display: block;
         margin: 0 2.5em;
         padding: 0 10px 10px;
@@ -142,10 +136,6 @@ $list-item-text-color: #444444;
         &:after {
           border-color: $status-complete;
         }
-
-        &:hover:after {
-          //border-color: #FFFFFF;
-        }
       }
       
       input[type=checkbox]:checked + label:after {
@@ -168,26 +158,26 @@ $list-item-text-color: #444444;
   input.edit {
     font-family: 'Gloria Hallelujah', cursive;
     color: #444;
-    padding: 0 40px 10px 10px;
-    border-width: 0 0 1px;
+    padding: 0 10px 10px 10px;
+    border-width: 0 0 3px;
+    border-color: $status-all;
     font-size: 1.2em;
     display: block;
     width: 100%;
     outline: none;
     box-sizing: border-box;
-    box-shadow: 0 0 8px rgba(black, 0.4) inset;
   }
 
   button.delete {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 12px;
+    left: 12px;
     color: white;
     border: none;
     outline: none;
     white-space: nowrap;
     @include transition(all ease-in-out 0.2s);
-    @include shaded-circle(2.5em, $delete-button-background);
+    @include shaded-circle(2em, $delete-button-background);
 
     &:hover {
       background: darken($delete-button-background, 5%);

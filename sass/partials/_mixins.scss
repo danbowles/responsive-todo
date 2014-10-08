@@ -11,7 +11,7 @@
   width: $diameter;
   line-height: $diameter;
   text-align: center;
-  border-radius: $diameter / 2;
+  border-radius: $diameter / 1.5;
 }
 
 @mixin nav-item-color($color) {

@@ -2,11 +2,12 @@ header
   div#task-entry
     form(ng-submit='createTodo()')
       input(type='text', ng-model='newTodo', placeholder='Almost forgot to...', autofocus)
-      button(type='submit') +
+      button(type='submit')
+        i.fa.fa-plus
         span &nbsp;Add
   div.go-to-nav
     a(href='#')
-      i.fa.fa-2x.fa-bars
+      i.fa.fa-bars
   nav
     ul
       li: a.all(href='#/all', ng-class='{active: isActive("/all")}') All Tasks
@@ -15,4 +16,6 @@ header
         span.count {{incompleteCount}}
       li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}') Completed
         span.count {{completeCount}}
-  h1.list-title to do list
+  h1.list-title 
+    i.fa.fa-check-circle-o
+    |  todoin'

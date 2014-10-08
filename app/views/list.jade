@@ -1,7 +1,10 @@
 section
-  h3: span {{subTitle}}
+  div.empty-list(ng-hide="todos.length") 
+    span.fa-stack.fa-5x
+      i.fa.fa-circle-thin.fa-stack-2x
+      i.fa.fa-warning.fa-stack-1x
+    h3  Add a task to get started.
   div(ng-show="todos.length")
-    h5 completed?
     ol
       li(ng-repeat='todo in todos | filter: statusFilter track by $index', ng-class='{complete: todo.done, editing: todo == editingTodo}')
         div(class='view')
@@ -12,4 +15,4 @@ section
         div.modify
           form(ng-submit='finishEditing(todo)', ng-model='editingTodo')
             input.edit(ng-model='todo.name')
-          button.delete.fa.fa-remove(class='delete', ng-click='removeTodo(todo)')
+          button.delete.fa.fa-trash(class='delete', ng-click='removeTodo(todo)')

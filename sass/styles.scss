@@ -15,7 +15,7 @@
 
 $main-background: #FFFFFF;
 
-$list-primary-color: #838E90;
+$main-title-color: #416675;
 $list-secondary-color: #B89335; //complement($list-primary-color);
 $list-secondary-shadow: lighten($list-secondary-color, 25%); //#B1BFC0;
 $primary-border-color: #99A3A5;
@@ -27,7 +27,8 @@ $add-task-button-color: #FFFFFF;
 $delete-button-background: #B83535;
 
 $nav-background: #FFFFFF; 
-$nav-hamburger-background: #416675;
+$nav-background-mobile: $add-task-button-background; 
+$nav-hamburger-background: #FFFFFF;
 $nav-item-color: #FFFFFF;
 
 $status-all: #D96D32;
@@ -78,34 +79,31 @@ body {
 
   footer {
     text-align: center;
-    color: $list-primary-color;
 
     a {
-      color: $list-secondary-color;
+      color: $status-complete;
     }
   }
   
+  $second-title-color: #BBBBBB; //lighten($status-all, 15%);
+
   .list-title {
     padding: 0 4%;
     font-size: 2.4em;
     text-align: center;
     letter-spacing: 0.06em;
-    color: $list-primary-color;
-    padding-top: 66px;
+    color: $main-title-color;
+    padding-top: 76px;
     margin: 0 0 22px;
-    @include text-shadow(.01em .01em 0px white,
-      .08em .08em 0px $list-secondary-shadow);
     
     @media (min-width: $bp-narrow) {
       font-size: 3.2em;
       padding-top: 75px;
-      @include text-shadow(.013em 0.013em 0 white,
-      0.1066666664em 0.1066666664em 0px $list-secondary-shadow);
+      @include text-shadow(1px 1px 0px white,
+      2px 2px 0px $second-title-color);
     }
     @media (min-width: $bp-narrow-plus-1) {
       font-size: 4em;
-      @include text-shadow(1px 1px 0px white,
-      5px 5px 0px $list-secondary-shadow);
       padding-top: 0;
       margin: 22px 0;
     }

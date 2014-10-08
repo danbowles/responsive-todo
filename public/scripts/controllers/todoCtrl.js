@@ -8,7 +8,6 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $fil
   $scope.$watch('todos', function(newVal, oldVal) {
     $scope.incompleteCount = $filter('filter')(todos, {done: false}).length;
     $scope.completeCount = todos.length - $scope.incompleteCount;
-    $scope.subTitle = todos.length ? 'Get Doin\'' : 'Nothin\' here - add something!';
   }, true);
 
   $scope.location = $location;
@@ -77,7 +76,6 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $fil
     $http.post('/api/todos', newTodo)
       .success(function(result) {
         newTodo._id = result.data._id;
-        console.log(newTodo);
       })
       .error(function(error) {
         throw error;
