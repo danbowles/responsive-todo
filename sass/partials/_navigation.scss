@@ -13,12 +13,17 @@
     }
 
     .fa {
-      color: $nav-hamburger-background;
+      color: rgba(#000000, 0.5);
       line-height: 55px;
       transition: all ease-in-out 0.2s;
 
+      &:hover {
+        color: rgba(#000000, 0.4);
+      }
+
       .show-nav & {
         transform: rotate(90deg);
+        color: #FFFFFF;
       }
     }
   }
@@ -41,6 +46,7 @@ nav {
   width: 100%;
   text-align: center;
   display: none;
+  z-index: 1;
 
   .show-nav & {
     display: block;

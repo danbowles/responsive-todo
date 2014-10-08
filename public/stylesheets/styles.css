@@ -378,13 +378,18 @@ ul, ol {
 }
 /* line 15, ../../sass/partials/_navigation.scss */
 .go-to-nav a .fa {
-  color: white;
+  color: rgba(0, 0, 0, 0.5);
   line-height: 55px;
   transition: all ease-in-out 0.2s;
 }
 /* line 20, ../../sass/partials/_navigation.scss */
+.go-to-nav a .fa:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+/* line 24, ../../sass/partials/_navigation.scss */
 .show-nav .go-to-nav a .fa {
   transform: rotate(90deg);
+  color: #FFFFFF;
 }
 @media (max-width: 37.5em) {
   /* line 1, ../../sass/partials/_navigation.scss */
@@ -399,7 +404,7 @@ ul, ol {
   }
 }
 
-/* line 37, ../../sass/partials/_navigation.scss */
+/* line 42, ../../sass/partials/_navigation.scss */
 nav {
   position: absolute;
   left: 0;
@@ -407,13 +412,14 @@ nav {
   width: 100%;
   text-align: center;
   display: none;
+  z-index: 1;
 }
-/* line 45, ../../sass/partials/_navigation.scss */
+/* line 51, ../../sass/partials/_navigation.scss */
 .show-nav nav {
   display: block;
 }
 @media (min-width: 37.5em) {
-  /* line 37, ../../sass/partials/_navigation.scss */
+  /* line 42, ../../sass/partials/_navigation.scss */
   nav {
     top: 0;
     position: fixed;
@@ -421,17 +427,17 @@ nav {
     display: block;
   }
 }
-/* line 56, ../../sass/partials/_navigation.scss */
+/* line 62, ../../sass/partials/_navigation.scss */
 nav ul {
   margin: 0 auto;
 }
 @media (min-width: 37.5em) {
-  /* line 56, ../../sass/partials/_navigation.scss */
+  /* line 62, ../../sass/partials/_navigation.scss */
   nav ul {
     max-width: 550px;
   }
 }
-/* line 65, ../../sass/partials/_navigation.scss */
+/* line 71, ../../sass/partials/_navigation.scss */
 nav li a {
   display: block;
   position: relative;
@@ -442,11 +448,11 @@ nav li a {
   background: white;
   transition: all ease-in-out 0.2s;
 }
-/* line 75, ../../sass/partials/_navigation.scss */
+/* line 81, ../../sass/partials/_navigation.scss */
 nav li a:hover span {
   background: #ffffff;
 }
-/* line 79, ../../sass/partials/_navigation.scss */
+/* line 85, ../../sass/partials/_navigation.scss */
 nav li a .count {
   width: 21px;
   margin-left: 10px;
@@ -460,7 +466,7 @@ nav li a .count {
   border-radius: 1em;
   transition: all ease-in-out 0.2s;
 }
-/* line 93, ../../sass/partials/_navigation.scss */
+/* line 99, ../../sass/partials/_navigation.scss */
 nav li a.all {
   color: #d96d32;
 }
@@ -479,7 +485,7 @@ nav li a.all.active .count, nav li a.all:hover .count {
   background: #FFFFFF;
   color: #d96d32;
 }
-/* line 97, ../../sass/partials/_navigation.scss */
+/* line 103, ../../sass/partials/_navigation.scss */
 nav li a.complete {
   color: #2a7d75;
 }
@@ -498,7 +504,7 @@ nav li a.complete.active .count, nav li a.complete:hover .count {
   background: #FFFFFF;
   color: #2a7d75;
 }
-/* line 101, ../../sass/partials/_navigation.scss */
+/* line 107, ../../sass/partials/_navigation.scss */
 nav li a.incomplete {
   color: #d92042;
 }
@@ -517,21 +523,21 @@ nav li a.incomplete.active .count, nav li a.incomplete:hover .count {
   background: #FFFFFF;
   color: #d92042;
 }
-/* line 106, ../../sass/partials/_navigation.scss */
+/* line 112, ../../sass/partials/_navigation.scss */
 nav li:last-child {
   box-shadow: 0 0 40px;
 }
 @media (min-width: 37.5em) {
-  /* line 64, ../../sass/partials/_navigation.scss */
+  /* line 70, ../../sass/partials/_navigation.scss */
   nav li {
     float: left;
     width: 33.333333333%;
   }
-  /* line 113, ../../sass/partials/_navigation.scss */
+  /* line 119, ../../sass/partials/_navigation.scss */
   nav li a {
     background: transparent;
   }
-  /* line 117, ../../sass/partials/_navigation.scss */
+  /* line 123, ../../sass/partials/_navigation.scss */
   nav li:last-child {
     box-shadow: none;
   }
