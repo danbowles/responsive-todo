@@ -1,0 +1,13 @@
+extends layout
+block content
+  .narrow
+    h3 Create an Account
+    form.auth(method='post' action='/signup')
+      label(for='email')
+        input(name='email', placeholder='Your Email')
+        i.fa.fa-at.fa-2x
+      label(for='password')
+        input(type='password' name='password', placeholder='Desired Password')
+        i.fa.fa-lock.fa-2x
+      button.button signup
+      a(href='/login').button.secondary login

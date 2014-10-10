@@ -1,21 +1,28 @@
 header
-  div#task-entry
-    form(ng-submit='createTodo()')
-      input(type='text', ng-model='newTodo', placeholder='Almost forgot to...', autofocus)
-      button(type='submit')
-        i.fa.fa-plus
-        span &nbsp;Add
-  div.go-to-nav
-    a(href='#')
-      i.fa.fa-bars
-  nav
-    ul
-      li: a.all(href='#/all', ng-class='{active: isActive("/all")}') All Tasks
-        span.count {{todos.length}}
-      li: a.incomplete(href='#/incomplete', ng-class='{active: isActive("/incomplete")}') Incomplete
-        span.count {{incompleteCount}}
-      li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}') Completed
-        span.count {{completeCount}}
-  h1.list-title 
+  if user
+    div#task-entry
+      form(ng-submit='createTodo()')
+        input(type='text', ng-model='newTodo', placeholder='Almost forgot to...', autofocus)
+        button.button(type='submit')
+          i.fa.fa-plus
+          span &nbsp;Add
+    div.go-to-nav
+      a(href='#')
+        i.fa.fa-bars
+    nav
+      ul
+        li: a.all(href='#/all', ng-class='{active: isActive("/all")}') 
+          i.fa.fa-asterisk
+          span  All Tasks
+          span.count {{todos.length}}
+        li: a.incomplete(href='#/incomplete', ng-class='{active: isActive("/incomplete")}')
+          i.fa.fa-check-circle
+          span  Incomplete
+          span.count {{incompleteCount}}
+        li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}')
+          i.fa.fa-circle-o
+          span  Completed
+          span.count {{completeCount}}
+  h1.title 
     i.fa.fa-check-circle-o
     |  todoin'

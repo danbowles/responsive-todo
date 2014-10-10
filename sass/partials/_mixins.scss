@@ -32,3 +32,42 @@
     }
   }
 }
+
+%input-main {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #444;
+  padding: 0 10px 10px 10px;
+  border-width: 0 0 3px;
+  border-color: $form-input-border-color;
+  font-size: 1.2em;
+  display: block;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+%form-button {
+  padding: 10px 14px;
+  border: none;
+  text-decoration: none;
+  background: $primary-button-background;
+  color: $primary-button-color;
+  font-weight: bold;
+  font-size: 1.3em;
+  
+  &:hover {
+    background: lighten($primary-button-background, 5%);
+  }
+
+  &.secondary {
+    background: $secondary-button-background;
+
+    .button + & {
+      margin-left: 16px;
+    }
+
+      &:hover {
+      background: lighten($secondary-button-background, 5%);
+    }
+  }
+}

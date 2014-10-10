@@ -13,10 +13,18 @@ router.param('todoId', function(req, res, next, todoId) {
   });
 });
 
+function isAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  res.send(403).json({error: 'Access Denied'}).end();
+}
+
 // /todos
 // ====================================================
 var todosRoute = router.route('/todos');
-todosRoute.get(function(req, res) {
+todosRoute.get(isAuthenticated, function(req, res) {
 
   Todo.find(function(err, todos) {
     if (err) {

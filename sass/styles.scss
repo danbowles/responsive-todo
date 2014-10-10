@@ -20,20 +20,28 @@ $list-secondary-color: #B89335; //complement($list-primary-color);
 $list-secondary-shadow: lighten($list-secondary-color, 25%); //#B1BFC0;
 $primary-border-color: #99A3A5;
 $secondary-border-color: lighten($primary-border-color, 15%);
+$second-title-color: #BBBBBB;
 
-$add-task-button-background: #416675;
-$add-task-button-color: #FFFFFF;
+$primary-button-background: #416675;
+$primary-button-color: #FFFFFF;
+$secondary-button-background: complement(invert($primary-button-background));
 
 $delete-button-background: #B83535;
 
 $nav-background: #FFFFFF; 
-$nav-background-mobile: $add-task-button-background; 
+$nav-background-mobile: $primary-button-background;
 $nav-hamburger-background: #FFFFFF;
 $nav-item-color: #FFFFFF;
 
 $status-all: #D96D32;
 $status-incomplete: #D92042; 
 $status-complete: #2A7D75;
+
+$form-input-border-color: $status-all;
+$form-input-icon-color: lighten($status-all, 30%);
+
+// transitions
+$ease-in-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 // Breakpoints
 $bp-narrow: 28em;
@@ -49,6 +57,7 @@ $bp-narrow-plus-1: 37.5em;
 @import "partials/task-entry";
 @import "partials/navigation";
 @import "partials/list";
+@import "partials/forms";
 
 body {
   background: #FFFFFF;
@@ -77,23 +86,13 @@ body {
     position: relative;
   }
 
-  footer {
-    text-align: center;
-
-    a {
-      color: $status-complete;
-    }
-  }
-  
-  $second-title-color: #BBBBBB; //lighten($status-all, 15%);
-
-  .list-title {
+  .title {
     padding: 0 4%;
     font-size: 2.4em;
     text-align: center;
     letter-spacing: 0.06em;
     color: $main-title-color;
-    padding-top: 76px;
+    padding-top: 16px;
     margin: 0 0 22px;
     
     @media (min-width: $bp-narrow) {
@@ -107,5 +106,31 @@ body {
       padding-top: 0;
       margin: 22px 0;
     }
+  }
+
+  nav + .title {
+    padding-top: 76px;
+  }
+
+  .narrow {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.button {
+  @extend %form-button;
+}
+
+footer {
+  padding: 20px 0 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $status-complete;
   }
 }

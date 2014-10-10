@@ -1,0 +1,22 @@
+form.auth {
+  label {
+    position: relative;
+    display: block;
+
+    .fa {
+      position: absolute;
+      top: 0;
+      color: $form-input-icon-color;
+    }
+  }
+
+  input {
+    @extend %input-main;
+    margin-bottom: 17px;
+    padding-left: 40px;
+  }
+
+  .button.secondary {
+    float: right;
+  }
+}

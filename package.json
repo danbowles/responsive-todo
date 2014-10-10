@@ -7,7 +7,6 @@
   "author": "Dan Bowles",
   "dependencies": {
     "express": "~4.0.0",
-    "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.0",
     "body-parser": "~1.0.0",
@@ -15,6 +14,12 @@
     "jade": "*",
     "method-override": "~1.0.0",
     "mongodb": "*",
-    "mongoose": "^3.8.16"
+    "mongoose": "^3.8.16",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "express-session": "^1.8.2",
+    "connect-flash": "^0.1.1",
+    "bcrypt-nodejs": "0.0.3",
+    "serve-favicon": "^2.1.5"
   }
 }

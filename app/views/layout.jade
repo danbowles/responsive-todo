@@ -12,8 +12,9 @@ html
   body(ng-app='respTodo')
     section(id='main', ng-controller='TodoCtrl')
       include header
-      block content
-      include footer
+      .content
+        block content
+    include footer
       
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js')

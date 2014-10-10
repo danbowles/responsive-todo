@@ -1,0 +1,15 @@
+extends layout
+block content
+  .narrow
+    h3 Login to Your Account
+    if message.length
+      h2= message[0]
+    form.auth(method='post' action='/login')
+      label(for='email')
+        input(name='email', placeholder='Email')
+        i.fa.fa-at.fa-2x
+      label(for='password')
+        input(type='password' name='password', placeholder='Password')
+        i.fa.fa-lock.fa-2x
+      button.button login
+      a.button.secondary(href='/signup') sign up

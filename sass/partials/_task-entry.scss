@@ -1,6 +1,6 @@
   #task-entry {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     width: 90%;
     text-align: right;
     right: 0;
@@ -12,27 +12,15 @@
       top: -92px;
     }
     
-    button {
+    .button {
+      padding: 15px 19px;
       position: absolute;
       right: 0;
       top: 0;
-      background: $add-task-button-background;
-      color: $add-task-button-color;
-      height: 55px;
-      width: 55px;
-      font-weight: bold;
-      border: none;
-      font-size: 1.3em;
-      
-      &:hover {
-        background: lighten($add-task-button-background, 5%);
-      }
 
       @media (min-width: $bp-narrow-plus-1) {
-        height: 45px;
-        width: 85px;
+        padding: 10px 14px;
       }
-
       
       &>span {
         display: none;

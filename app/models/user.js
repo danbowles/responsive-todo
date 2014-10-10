@@ -1,20 +1,36 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
-var UserSchema = new mongoose.Schema({
-	username: {
-		type: String,
-		required: true,
-		unique: true
-	},
-	password: {
-		type: String,
-		require: true
-	}
+var UserSchema = mongoose.Schema({
+  local: {
+    email: String,
+    password: String
+  },
+  // facebook: {
+  //   id: String,
+  //   token: String,
+  //   email: String,
+  //   name: String
+  // },
+  // twitter: {
+  //   id: String,
+  //   token: String,
+  //   displayName: String,
+  //   username: String
+  // },
+  // google: {
+  //   id: String,
+  //   token: String,
+  //   email: String,
+  //   name: String
+  // }
 });
 
-UserSchema.pre('save', function(callback) {
-	var user = this;
+UserSchema.methods.generateHash = function(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+UserSchema.methods.validPassword = function(password) {
+  return bcrypt.compareSync(password, this.local.password);
+};
 
-  // http://scottksmith.com/blog/2014/05/29/beer-locker-building-a-restful-api-with-node-passport/
-});
+module.exports = mongoose.model('User', UserSchema);
