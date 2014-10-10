@@ -12,15 +12,15 @@ header
     nav
       ul
         li: a.all(href='#/all', ng-class='{active: isActive("/all")}') 
-          i.fa.fa-asterisk
+          i.fa.fa-asterisk.fa-3x
           span  All Tasks
           span.count {{todos.length}}
         li: a.incomplete(href='#/incomplete', ng-class='{active: isActive("/incomplete")}')
-          i.fa.fa-circle-o
+          i.fa.fa-circle-o.fa-3x
           span  Incomplete
           span.count {{incompleteCount}}
         li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}')
-          i.fa.fa-check-circle
+          i.fa.fa-check-circle.fa-3x
           span  Completed
           span.count {{completeCount}}
   h1.title 

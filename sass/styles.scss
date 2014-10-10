@@ -110,6 +110,11 @@ body {
 
   nav + .title {
     padding-top: 76px;
+    transition: padding 0.16s $ease-in-cubic;
+
+    .show-nav & {
+      padding-top:142px;
+    }
   }
 
   .narrow {

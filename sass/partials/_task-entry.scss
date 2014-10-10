@@ -10,6 +10,7 @@
       background: #FFFFFF;
       right: -1px;
       top: -92px;
+      z-index: 1;
     }
     
     .button {
@@ -39,7 +40,7 @@
       border: none;
       background: #FFFFFF;
       @include box-sizing(border-box);
-      transition: box-shadow ease-in-out 0.1s;
+      transition: box-shadow ease-in-out 0.16s;
       font-size: 1.2em;
       border: 1px solid darken($nav-background-mobile, 10%);
       

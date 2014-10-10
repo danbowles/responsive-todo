@@ -13,10 +13,10 @@ var respTodo = angular.module('respTodo', []);
       $body.toggleClass('show-nav');
     });
 
-    $('nav a').click(function() {
-      if ($body.hasClass('show-nav')) {
-        $body.removeClass('show-nav');
-      }
-    });
+    // $('nav a').click(function() {
+    //   if ($body.hasClass('show-nav')) {
+    //     $body.removeClass('show-nav');
+    //   }
+    // });
   });
 })(jQuery);
