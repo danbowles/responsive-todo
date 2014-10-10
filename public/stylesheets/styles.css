@@ -306,7 +306,7 @@ ul, ol {
 #task-entry {
   position: absolute;
   z-index: 3;
-  width: 90%;
+  width: 86%;
   text-align: right;
   right: 0;
 }
@@ -344,9 +344,10 @@ ul, ol {
 }
 /* line 34, ../../sass/partials/_task-entry.scss */
 #task-entry input {
-  width: 96%;
-  margin-top: 9px;
-  padding: 6px 57px 6px 6px;
+  width: 84%;
+  margin: 9px auto 0;
+  padding: 6px;
+  float: left;
   border: none;
   background: #FFFFFF;
   -webkit-box-sizing: border-box;
@@ -354,6 +355,7 @@ ul, ol {
   box-sizing: border-box;
   transition: box-shadow ease-in-out 0.1s;
   font-size: 1.2em;
+  border: 1px solid #2f4954;
 }
 /* line 2, ../../sass/partials/_mixins.scss */
 #task-entry input::-webkit-input-placeholder {
@@ -375,24 +377,20 @@ ul, ol {
   color: #676767;
   font-style: italic;
 }
-/* line 49, ../../sass/partials/_task-entry.scss */
+/* line 51, ../../sass/partials/_task-entry.scss */
 #task-entry input:focus {
   outline: none;
-}
-@media (min-width: 28em) {
-  /* line 34, ../../sass/partials/_task-entry.scss */
-  #task-entry input {
-    padding-right: 97px;
-  }
 }
 @media (min-width: 37.5em) {
   /* line 34, ../../sass/partials/_task-entry.scss */
   #task-entry input {
+    float: none;
     font-size: 1.4em;
     width: 100%;
     margin: 0;
     padding: 11px 57px 11px 5%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    border: none;
   }
   /* line 64, ../../sass/partials/_task-entry.scss */
   #task-entry input:focus {
