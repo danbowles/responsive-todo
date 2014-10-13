@@ -14,6 +14,14 @@
   border-radius: $diameter / 1.5;
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 @mixin nav-item-color($color) {
   color: $color;
 
@@ -70,4 +78,9 @@
       background: lighten($secondary-button-background, 5%);
     }
   }
+}
+
+%user-messaging {
+  padding: .8em;
+  border: 1px solid;
 }

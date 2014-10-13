@@ -64,10 +64,10 @@ nav {
     display: block;
     box-shadow: 0 0 10px;
     padding-bottom: 0;
-    background: darken($nav-background-mobile, 10%);
+    background: #FFFFFF;
 
     .show-nav & {
-      top: 55px;
+      top: 0px;
     }
   }
   
@@ -141,7 +141,7 @@ nav {
     
     @media (min-width: $bp-narrow-plus-1) {
       a {
-        background: transparent;
+        padding: 10px 0;
 
         .fa-1x {
           display: inline;

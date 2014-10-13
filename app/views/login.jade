@@ -1,9 +1,11 @@
 extends layout
 block content
   .narrow
-    h3 Login to Your Account
-    if message.length
-      h2= message[0]
+    h2 Login to Your Account
+    if message
+      p(class='msg-#{message.type}')
+        i.fa(class='fa-#{message.type}')
+        span= ' ' + message.text
     form.auth(method='post' action='/login')
       label(for='email')
         input(name='email', placeholder='Email')

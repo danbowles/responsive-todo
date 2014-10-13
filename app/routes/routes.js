@@ -7,7 +7,8 @@ module.exports = function(router, passport) {
   });
 
   router.get('/login', function(req, res) {
-    res.render('login', { message: req.flash('loginMessage')});
+    console.log(req.message.text && {message: req.message});
+    res.render('login', req.message.text && {message: req.message});
   });
 
   router.post('/login', passport.authenticate('local-login', {
@@ -18,7 +19,8 @@ module.exports = function(router, passport) {
 
   router.get('/logout', function(req, res) {
     req.logout();
-    req.flash('loginMessage', 'Thanks for hanging out!');
+    req.flash('type', 'info');
+    req.flash('message', 'Thanks for hanging out!');
     res.redirect('/login');
   });
 

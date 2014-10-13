@@ -13,17 +13,17 @@ header
       ul
         li: a.all(href='#/all', ng-class='{active: isActive("/all")}') 
           i.fa.fa-asterisk.fa-3x
-          i.fa.fa-asterisk.fa-2x
+          i.fa.fa-asterisk.fa-1x
           span.text  All Tasks
           span.count {{todos.length}}
         li: a.incomplete(href='#/incomplete', ng-class='{active: isActive("/incomplete")}')
           i.fa.fa-circle-o.fa-3x
-          i.fa.fa-circle-o.fa-2x
+          i.fa.fa-circle-o.fa-1x
           span.text  Incomplete
           span.count {{incompleteCount}}
         li: a.complete(href='#/complete', ng-class='{active: isActive("/complete")}')
           i.fa.fa-check-circle.fa-3x
-          i.fa.fa-check-circle.fa-2x
+          i.fa.fa-check-circle.fa-1x
           span.text  Completed
           span.count {{completeCount}}
   h1.title 

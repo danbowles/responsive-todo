@@ -41,6 +41,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+app.use(function(req, res, next) {
+  req.message = {
+    type: req.flash('type')[0],
+    text: req.flash('message')[0]
+  };
+  return next();
+});
+
 // Routes
 app.use('/', appRouter);
 app.use('/api', apiRoutes);

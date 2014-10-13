@@ -37,6 +37,14 @@ $status-all: #D96D32;
 $status-incomplete: #D92042; 
 $status-complete: #2A7D75;
 
+$msg-warning-background: darken($status-incomplete, 5%);
+$msg-warning-border-color: darken($msg-warning-background, 5%);
+$msg-warning-color: #FFFFFF;
+
+$msg-info-background: #63B27E;
+$msg-info-border-color: darken($msg-info-background, 25%);
+$msg-info-color: $msg-info-border-color;
+
 $form-input-border-color: $status-all;
 $form-input-icon-color: lighten($status-all, 30%);
 
@@ -58,6 +66,7 @@ $bp-narrow-plus-1: 37.5em;
 @import "partials/navigation";
 @import "partials/list";
 @import "partials/forms";
+@import "partials/messaging";
 
 body {
   background: #FFFFFF;
@@ -114,6 +123,14 @@ body {
 
     .show-nav & {
       padding-top:142px;
+
+      @media (min-width: $bp-narrow-plus-1) {
+        padding-top: 0;
+      }      
+    }
+
+    @media (min-width: $bp-narrow-plus-1) {
+      padding-top: 0;
     }
   }
 

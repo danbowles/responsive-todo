@@ -1,7 +1,11 @@
 extends layout
 block content
   .narrow
-    h3 Create an Account
+    h2 Create an Account
+    if message
+      p(class='msg-#{message.type}')
+        i.fa(class='fa-#{message.type}')
+        span= ' ' + message.text
     form.auth(method='post' action='/signup')
       label(for='email')
         input(name='email', placeholder='Your Email')

@@ -1,0 +1,12 @@
+.msg-warning {
+  @extend %user-messaging;
+  background: $msg-warning-background;
+  border-color: $msg-warning-border-color;
+  color: $msg-warning-color;
+}
+
+.msg-info {
+  @extend %user-messaging;
+  border-color: $msg-info-border-color;
+  color: $msg-info-color;
+}
