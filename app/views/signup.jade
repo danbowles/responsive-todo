@@ -8,10 +8,10 @@ block content
         span= ' ' + message.text
     form.auth(method='post' action='/signup')
       label(for='email')
-        input(name='email', placeholder='Your Email')
+        input(name='email', placeholder='Your Email', type='email', required)
         i.fa.fa-at.fa-2x
       label(for='password')
-        input(type='password' name='password', placeholder='Desired Password')
+        input(type='password' name='password', placeholder='Desired Password' required)
         i.fa.fa-lock.fa-2x
       button.button signup
       a(href='/login').button.secondary login

@@ -36,6 +36,9 @@ $nav-item-color: #FFFFFF;
 $status-all: #D96D32;
 $status-incomplete: #D92042; 
 $status-complete: #2A7D75;
+$status-logout: #2E3066;
+$status-logout: #7F66C9;
+$status-logout: #669DC9;
 
 $msg-warning-background: darken($status-incomplete, 5%);
 $msg-warning-border-color: darken($msg-warning-background, 5%);
@@ -54,6 +57,7 @@ $ease-in-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 // Breakpoints
 $bp-narrow: 28em;
 $bp-narrow-plus-1: 37.5em;
+$bp-narrow-plus-2: 48.75em;
 
 // Compass
 @import "compass";

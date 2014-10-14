@@ -25,7 +25,7 @@ module.exports = function(router, passport) {
   });
 
   router.get('/signup', function(req, res) {
-    res.render('signup');
+    res.render('signup', req.message.text && {message: req.message});
   });
 
   router.post('/signup', passport.authenticate('local-signup', {

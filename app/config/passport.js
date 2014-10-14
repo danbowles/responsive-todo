@@ -30,9 +30,9 @@ module.exports = function(passport) {
         if (err) {
           done(err);
         }
-
         if (user) {
-          return done(null, false, {type: 'warning', message: 'That email is already in use.'});
+          flashWarning('That email is already in use.', req);
+          return done(null, false);
         } else {
           newUser = new User();
 
@@ -58,21 +58,27 @@ module.exports = function(passport) {
   },
   function(req, email, password, done) {
     User.findOne({ 'local.email': email }, function(err, user) {
+      var message = 'Wrong Username and/or Password.';
       if (err) {
         return done(err);
       }
 
       if(!user) {
-        return done(null, false, req.flash('loginMessage', 'No user found.'));
+        flashWarning(message, req);
+        return done(null, false);
       }
 
       if (!user.validPassword(password)) {
-        req.flash('type', 'warning');
-        req.flash('message', 'Wrong Username and/or Password');
-        return done(null, false, {stuff: 'things'});
+        flashWarning(message, req);
+        return done(null, false);
       }
 
       return done(null, user);
     });
   }));
 };
+
+function flashWarning(message, req) {
+  req.flash('type', 'warning');
+  req.flash('message', message);
+}
