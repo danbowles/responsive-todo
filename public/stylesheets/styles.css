@@ -16,7 +16,7 @@
   color: #444;
   padding: 0 10px 10px 10px;
   border-width: 0 0 3px;
-  border-color: #d96d32;
+  border-color: #D96D32;
   font-size: 1.2em;
   display: block;
   width: 100%;
@@ -30,7 +30,7 @@
   border: none;
   text-decoration: none;
   background: #416675;
-  color: white;
+  color: #FFFFFF;
   font-weight: bold;
   font-size: 1.3em;
 }
@@ -312,9 +312,10 @@ ul, ol {
 #task-entry {
   position: absolute;
   z-index: 3;
-  width: 86%;
+  width: 76%;
   text-align: right;
   right: 0;
+  margin-right: 30px;
 }
 @media (min-width: 37.5em) {
   /* line 1, ../../sass/partials/_task-entry.scss */
@@ -326,7 +327,7 @@ ul, ol {
     z-index: 1;
   }
 }
-/* line 16, ../../sass/partials/_task-entry.scss */
+/* line 17, ../../sass/partials/_task-entry.scss */
 #task-entry .button {
   padding: 15px 19px;
   position: absolute;
@@ -334,22 +335,22 @@ ul, ol {
   top: 0;
 }
 @media (min-width: 37.5em) {
-  /* line 16, ../../sass/partials/_task-entry.scss */
+  /* line 17, ../../sass/partials/_task-entry.scss */
   #task-entry .button {
     padding: 10px 14px;
   }
 }
-/* line 26, ../../sass/partials/_task-entry.scss */
+/* line 27, ../../sass/partials/_task-entry.scss */
 #task-entry .button > span {
   display: none;
 }
 @media (min-width: 37.5em) {
-  /* line 26, ../../sass/partials/_task-entry.scss */
+  /* line 27, ../../sass/partials/_task-entry.scss */
   #task-entry .button > span {
     display: inline;
   }
 }
-/* line 35, ../../sass/partials/_task-entry.scss */
+/* line 36, ../../sass/partials/_task-entry.scss */
 #task-entry input {
   width: 84%;
   margin: 9px auto 0;
@@ -357,8 +358,8 @@ ul, ol {
   float: left;
   border: none;
   background: #FFFFFF;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   transition: box-shadow ease-in-out 0.16s;
   font-size: 1.2em;
@@ -384,12 +385,12 @@ ul, ol {
   color: #676767;
   font-style: italic;
 }
-/* line 52, ../../sass/partials/_task-entry.scss */
+/* line 53, ../../sass/partials/_task-entry.scss */
 #task-entry input:focus {
   outline: none;
 }
 @media (min-width: 37.5em) {
-  /* line 35, ../../sass/partials/_task-entry.scss */
+  /* line 36, ../../sass/partials/_task-entry.scss */
   #task-entry input {
     float: none;
     font-size: 1.4em;
@@ -399,14 +400,14 @@ ul, ol {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     border: none;
   }
-  /* line 65, ../../sass/partials/_task-entry.scss */
+  /* line 66, ../../sass/partials/_task-entry.scss */
   #task-entry input:focus {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.42);
   }
 }
 
 /* line 1, ../../sass/partials/_navigation.scss */
-nav li a {
+nav:not(.account) li a {
   display: block;
   position: relative;
   text-decoration: none;
@@ -462,7 +463,7 @@ nav li a {
 }
 
 /* line 53, ../../sass/partials/_navigation.scss */
-nav {
+nav:not(.account) {
   position: absolute;
   left: 0;
   top: -90px;
@@ -475,12 +476,12 @@ nav {
   box-shadow: 0 0 40px;
 }
 /* line 65, ../../sass/partials/_navigation.scss */
-.show-nav nav {
+.show-nav nav:not(.account) {
   top: 55px;
 }
 @media (min-width: 37.5em) {
   /* line 53, ../../sass/partials/_navigation.scss */
-  nav {
+  nav:not(.account) {
     top: 0;
     position: fixed;
     z-index: 1;
@@ -490,54 +491,54 @@ nav {
     background: #FFFFFF;
   }
   /* line 79, ../../sass/partials/_navigation.scss */
-  .show-nav nav {
+  .show-nav nav:not(.account) {
     top: 0px;
   }
 }
 /* line 84, ../../sass/partials/_navigation.scss */
-nav ul {
+nav:not(.account) ul {
   margin: 0 auto;
   position: relative;
 }
 @media (min-width: 37.5em) {
   /* line 84, ../../sass/partials/_navigation.scss */
-  nav ul {
+  nav:not(.account) ul {
     max-width: 470px;
   }
 }
 @media (min-width: 48.75em) {
   /* line 84, ../../sass/partials/_navigation.scss */
-  nav ul {
+  nav:not(.account) ul {
     max-width: 550px;
   }
 }
 /* line 97, ../../sass/partials/_navigation.scss */
-nav li {
+nav:not(.account) li {
   float: left;
   width: 33.333333333%;
 }
 /* line 101, ../../sass/partials/_navigation.scss */
-nav li a {
+nav:not(.account) li a {
   padding: 6px 0;
 }
 /* line 105, ../../sass/partials/_navigation.scss */
-nav li a .fa-1x {
+nav:not(.account) li a .fa-1x {
   display: none;
 }
 /* line 109, ../../sass/partials/_navigation.scss */
-nav li a .fa-3x {
+nav:not(.account) li a .fa-3x {
   display: inline;
 }
 /* line 113, ../../sass/partials/_navigation.scss */
-nav li a span.text {
+nav:not(.account) li a span.text {
   display: none;
 }
 /* line 117, ../../sass/partials/_navigation.scss */
-nav li a:hover .count {
+nav:not(.account) li a:hover .count {
   background: #ffffff;
 }
 /* line 121, ../../sass/partials/_navigation.scss */
-nav li a .count {
+nav:not(.account) li a .count {
   position: absolute;
   bottom: 3px;
   left: 50%;
@@ -554,127 +555,92 @@ nav li a .count {
   transition: all ease-in-out 0.2s;
 }
 /* line 138, ../../sass/partials/_navigation.scss */
-nav li a.all {
-  color: #d96d32;
+nav:not(.account) li a.all {
+  color: #D96D32;
 }
 /* line 28, ../../sass/partials/_mixins.scss */
-nav li a.all .count {
-  background: #d96d32;
+nav:not(.account) li a.all .count {
+  background: #D96D32;
 }
 /* line 32, ../../sass/partials/_mixins.scss */
-nav li a.all.active, nav li a.all:hover {
+nav:not(.account) li a.all.active, nav:not(.account) li a.all:hover {
   color: #FFFFFF;
-  background: #d96d32;
+  background: #D96D32;
   box-shadow: 0 2px 5px rgba(182, 86, 34, 0.3);
 }
 /* line 37, ../../sass/partials/_mixins.scss */
-nav li a.all.active .count, nav li a.all:hover .count {
+nav:not(.account) li a.all.active .count, nav:not(.account) li a.all:hover .count {
   background: #FFFFFF;
-  color: #d96d32;
+  color: #D96D32;
 }
 /* line 142, ../../sass/partials/_navigation.scss */
-nav li a.complete {
-  color: #2a7d75;
+nav:not(.account) li a.complete {
+  color: #2A7D75;
 }
 /* line 28, ../../sass/partials/_mixins.scss */
-nav li a.complete .count {
-  background: #2a7d75;
+nav:not(.account) li a.complete .count {
+  background: #2A7D75;
 }
 /* line 32, ../../sass/partials/_mixins.scss */
-nav li a.complete.active, nav li a.complete:hover {
+nav:not(.account) li a.complete.active, nav:not(.account) li a.complete:hover {
   color: #FFFFFF;
-  background: #2a7d75;
+  background: #2A7D75;
   box-shadow: 0 2px 5px rgba(29, 87, 81, 0.3);
 }
 /* line 37, ../../sass/partials/_mixins.scss */
-nav li a.complete.active .count, nav li a.complete:hover .count {
+nav:not(.account) li a.complete.active .count, nav:not(.account) li a.complete:hover .count {
   background: #FFFFFF;
-  color: #2a7d75;
+  color: #2A7D75;
 }
 /* line 146, ../../sass/partials/_navigation.scss */
-nav li a.incomplete {
-  color: #d92042;
+nav:not(.account) li a.incomplete {
+  color: #D92042;
 }
 /* line 28, ../../sass/partials/_mixins.scss */
-nav li a.incomplete .count {
-  background: #d92042;
+nav:not(.account) li a.incomplete .count {
+  background: #D92042;
 }
 /* line 32, ../../sass/partials/_mixins.scss */
-nav li a.incomplete.active, nav li a.incomplete:hover {
+nav:not(.account) li a.incomplete.active, nav:not(.account) li a.incomplete:hover {
   color: #FFFFFF;
-  background: #d92042;
+  background: #D92042;
   box-shadow: 0 2px 5px rgba(173, 25, 52, 0.3);
 }
 /* line 37, ../../sass/partials/_mixins.scss */
-nav li a.incomplete.active .count, nav li a.incomplete:hover .count {
+nav:not(.account) li a.incomplete.active .count, nav:not(.account) li a.incomplete:hover .count {
   background: #FFFFFF;
-  color: #d92042;
+  color: #D92042;
 }
 @media (min-width: 37.5em) {
   /* line 152, ../../sass/partials/_navigation.scss */
-  nav li a {
+  nav:not(.account) li a {
     padding: 10px 0;
   }
   /* line 155, ../../sass/partials/_navigation.scss */
-  nav li a .fa-1x {
+  nav:not(.account) li a .fa-1x {
     display: inline;
   }
   /* line 159, ../../sass/partials/_navigation.scss */
-  nav li a .fa-3x {
+  nav:not(.account) li a .fa-3x {
     display: none;
   }
   /* line 163, ../../sass/partials/_navigation.scss */
-  nav li a span.count {
+  nav:not(.account) li a span.count {
     position: relative;
     left: auto;
     bottom: auto;
   }
   /* line 169, ../../sass/partials/_navigation.scss */
-  nav li a span.text {
+  nav:not(.account) li a span.text {
     display: inline;
   }
 }
-/* line 176, ../../sass/partials/_navigation.scss */
-nav li.account {
-  float: none;
-  width: 50px;
+
+/* line 177, ../../sass/partials/_navigation.scss */
+nav.account {
   position: absolute;
-  right: -49px;
-}
-/* line 182, ../../sass/partials/_navigation.scss */
-nav li.account a {
-  padding: 11px 0px 12px;
-  color: #669dc9;
-}
-/* line 28, ../../sass/partials/_mixins.scss */
-nav li.account a .count {
-  background: #669dc9;
-}
-/* line 32, ../../sass/partials/_mixins.scss */
-nav li.account a.active, nav li.account a:hover {
-  color: #FFFFFF;
-  background: #669dc9;
-  box-shadow: 0 2px 5px rgba(66, 133, 186, 0.3);
-}
-/* line 37, ../../sass/partials/_mixins.scss */
-nav li.account a.active .count, nav li.account a:hover .count {
-  background: #FFFFFF;
-  color: #669dc9;
-}
-/* line 186, ../../sass/partials/_navigation.scss */
-nav li.account a span {
-  display: none;
-}
-@media (min-width: 48.75em) {
-  /* line 176, ../../sass/partials/_navigation.scss */
-  nav li.account {
-    width: 100px;
-    right: -100px;
-  }
-  /* line 195, ../../sass/partials/_navigation.scss */
-  nav li.account a span {
-    display: inline;
-  }
+  right: 0;
+  z-index: 2;
 }
 
 /* line 3, ../../sass/partials/_list.scss */
@@ -737,22 +703,22 @@ nav li.account a span {
   position: relative;
   float: left;
   font-weight: bold;
-  color: #d92042;
+  color: #D92042;
   counter-increment: counter;
   content: counter(counter,decimal-leading-zero);
-  background: white;
+  background: #FFFFFF;
   height: 28px;
   width: 28px;
   line-height: 28px;
   text-align: center;
   border-radius: 18.66667px;
   line-height: 28px;
-  border: 2px solid #d92042;
+  border: 2px solid #D92042;
   transition: background ease-in-out 0.2s, color ease-in-out 0.2s;
 }
 /* line 70, ../../sass/partials/_list.scss */
 .content ol > li.complete:before {
-  background: #2a7d75;
+  background: #2A7D75;
   line-height: 2em;
   height: 2em;
   width: 2em;
@@ -781,7 +747,7 @@ nav li.account a span {
   width: 30px;
   right: 9px;
   top: 9px;
-  border: 3px solid #99a3a5;
+  border: 3px solid #99A3A5;
   transition: all ease-in-out 0.2s;
 }
 /* line 103, ../../sass/partials/_list.scss */
@@ -793,10 +759,9 @@ nav li.account a span {
   width: 6px;
   right: 9px;
   top: 2px;
-  -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   border: 2px solid transparent;
   border-width: 0 5px 5px 0;
@@ -805,7 +770,7 @@ nav li.account a span {
 }
 /* line 118, ../../sass/partials/_list.scss */
 .content ol > li label:hover {
-  border-color: #2a7d75;
+  border-color: #2A7D75;
   border-radius: 50%;
 }
 /* line 122, ../../sass/partials/_list.scss */
@@ -815,12 +780,12 @@ nav li.account a span {
 }
 /* line 129, ../../sass/partials/_list.scss */
 .content ol > li.complete label {
-  border-color: #2a7d75;
+  border-color: #2A7D75;
   border-radius: 50%;
 }
 /* line 133, ../../sass/partials/_list.scss */
 .content ol > li.complete label:after {
-  border-color: #2a7d75;
+  border-color: #2A7D75;
 }
 /* line 138, ../../sass/partials/_list.scss */
 .content ol > li input[type=checkbox]:checked + label:after {
@@ -846,12 +811,11 @@ nav li.account a span {
   border: none;
   outline: none;
   white-space: nowrap;
-  -webkit-transition: all ease-in-out;
-  -webkit-transition-delay: 0.2s;
-  -moz-transition: all ease-in-out 0.2s;
-  -o-transition: all ease-in-out 0.2s;
-  transition: all ease-in-out 0.2s;
-  background: #b83535;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background: #B83535;
   height: 2em;
   width: 2em;
   line-height: 2em;
@@ -889,7 +853,7 @@ form.auth .button.secondary {
 .msg-warning {
   background: #c31d3b;
   border-color: #ad1934;
-  color: white;
+  color: #FFFFFF;
 }
 
 /* line 8, ../../sass/partials/_messaging.scss */
@@ -921,10 +885,8 @@ body {
     margin-top: 140px;
     max-width: 550px;
     border: 1px solid #DDDDDD;
-    -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    -webkit-border-radius: 2px;
     border-radius: 2px;
     box-shadow: 0 0 1px #cfd4d5 inset, 0 3px 7px rgba(0, 0, 0, 0.4);
   }
@@ -948,7 +910,7 @@ body {
   #main .title {
     font-size: 3.2em;
     padding-top: 75px;
-    text-shadow: 1px 1px 0px white, 2px 2px 0px #bbbbbb;
+    text-shadow: 1px 1px 0px white, 2px 2px 0px #BBBBBB;
   }
 }
 @media (min-width: 37.5em) {
@@ -997,5 +959,5 @@ footer p {
 }
 /* line 159, ../../sass/styles.scss */
 footer a {
-  color: #2a7d75;
+  color: #2A7D75;
 }

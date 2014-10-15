@@ -1,9 +1,10 @@
   #task-entry {
     position: absolute;
     z-index: 3;
-    width: 86%;
+    width: 76%;
     text-align: right;
     right: 0;
+    margin-right: 30px;
     
     @media (min-width: $bp-narrow-plus-1) {
       width: 100%;

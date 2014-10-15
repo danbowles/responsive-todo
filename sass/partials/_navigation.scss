@@ -50,7 +50,7 @@
   }
 }
 
-nav {
+nav:not(.account) {
   position: absolute;
   left: 0;
   top: -90px;
@@ -172,29 +172,10 @@ nav {
       }
     }
   }
+}
 
-  li.account {
-    float: none;
-    width: 50px;
-    position: absolute;
-    right: -49px;
-
-    a {
-      padding: 11px 0px 12px;
-      @include nav-item-color($status-logout);
-
-      span {
-        display: none;
-      }
-    }
-
-    @media(min-width: $bp-narrow-plus-2) {
-      width: 100px;
-      right: -100px;
-
-      a span {
-        display: inline;
-      }
-    }
-  }
+nav.account {
+  position: absolute;
+  right: 0;
+  z-index: 2;
 }
