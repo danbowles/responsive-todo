@@ -1,10 +1,10 @@
   #task-entry {
     position: absolute;
     z-index: 3;
-    width: 76%;
+    width: 72%;
     text-align: right;
     right: 0;
-    margin-right: 30px;
+    margin-right: 55px;
     
     @media (min-width: $bp-narrow-plus-1) {
       width: 100%;
@@ -12,6 +12,7 @@
       right: -1px;
       top: -92px;
       z-index: 1;
+      margin-right: 0;
     }
     
     .button {
@@ -19,24 +20,26 @@
       position: absolute;
       right: 0;
       top: 0;
+      border-right: 1px solid rgba(#000000, 0.2);
 
-      @media (min-width: $bp-narrow-plus-1) {
-        padding: 10px 14px;
-      }
-      
-      &>span {
+      & > span {
         display: none;
         
         @media (min-width: $bp-narrow-plus-1) {
           display: inline;
         }
       }
+
+      @media (min-width: $bp-narrow-plus-1) {
+        padding: 10px 14px;
+        border-right: none;
+      }
     }
     
     input {
-      width: 84%;
-      margin: 9px auto 0;
-      padding: 6px;
+      width: 81%;
+      margin: 5px auto 0;
+      padding: 10px 6px;
       float: left;
       border: none;
       background: #FFFFFF;
@@ -44,6 +47,7 @@
       transition: box-shadow ease-in-out 0.16s;
       font-size: 1.2em;
       border: 1px solid darken($nav-background-mobile, 10%);
+      border-radius: 3px;
       
       @include placeholder {
         color: #676767;
@@ -62,6 +66,7 @@
         padding: 11px 57px 11px 5%;
         box-shadow: 0 2px 5px rgba(#000000, 0.4);
         border: none;
+        border-radius: none;
         
         &:focus {
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.42);

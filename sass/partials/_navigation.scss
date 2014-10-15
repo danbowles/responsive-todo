@@ -15,15 +15,17 @@
     display: block;
     height: 55px;
     width: 55px;
+    font-size: 1.3em;
     text-align: center;
     background: $nav-background-mobile;
+    text-shadow: 0 1px 0 rgba(#FFFFFF, 0.2);
 
     &:hover {
       background: lighten($nav-background-mobile, 5%);
     }
 
     .fa-bars {
-      color: rgba(#000000, 0.5);
+      color: rgba(#000000, 0.8);
       line-height: 55px;
       transition: all ease-in-out 0.2s;
 
@@ -178,4 +180,63 @@ nav.account {
   position: absolute;
   right: 0;
   z-index: 2;
+
+  @media (min-width: $bp-narrow-plus-1) {
+    width: 50px;
+    right: -60px;
+    box-shadow: $main-box-shadow;
+  }
+
+  @media (min-width: $bp-narrow-plus-2) {
+    width: 100px;
+    right: -110px;
+    box-shadow: $main-box-shadow;
+  }
+
+  li {
+    span {
+      display: none;
+    }
+
+    @media (min-width: $bp-narrow-plus-1) {
+      text-shadow: none;
+      background: #FFFFFF;
+      font-size: 1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  a {
+    display:block;
+    color: #FFFFFF;
+    padding: 15px 17px;
+    color: rgba(#000000,0.8);
+    text-shadow: 0 1px 0 rgba(#FFFFFF, 0.2);
+    font-size: 1.3em;
+    font-weight: bold;
+    border-left: 1px solid rgba(#FFFFFF, 0.2);
+    background: $primary-button-background;
+
+    &:hover {
+      background: lighten($primary-button-background, 5%);
+    }
+
+    @media (min-width: $bp-narrow-plus-1) {
+      padding: 10px 0;
+      text-shadow: none;
+      font-size: 1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      color: $primary-button-color;
+      text-shadow: none;
+    }
+
+    @media (min-width: $bp-narrow-plus-2) {
+      span {
+        display: inline;
+      }
+    }
+  }
 }

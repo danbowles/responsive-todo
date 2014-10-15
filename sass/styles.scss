@@ -51,6 +51,8 @@ $msg-info-color: $msg-info-border-color;
 $form-input-border-color: $status-all;
 $form-input-icon-color: lighten($status-all, 30%);
 
+$main-box-shadow: 0 0 1px lighten($primary-border-color,20%) inset, 0 3px 7px rgba(#000000, 0.4);
+
 // transitions
 $ease-in-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
@@ -84,15 +86,18 @@ body {
 #main {
   margin: 0 auto;
   background: #FFFFFF;
-  
+
   @media (min-width: $bp-narrow-plus-1) {
     width: 60%;
     margin-top: 140px;
     max-width: 550px;
     border: 1px solid #DDDDDD;
     @include border-radius(2px);
-    box-shadow: 0 0 1px lighten($primary-border-color,20%) inset,
-      0 3px 7px rgba(#000000, 0.4);
+    box-shadow: $main-box-shadow;
+
+    &.auth {
+      margin-top: 20px;
+    }
   }
   
   header {
@@ -115,7 +120,7 @@ body {
       2px 2px 0px $second-title-color);
     }
     @media (min-width: $bp-narrow-plus-1) {
-      font-size: 4em;
+      font-size: 3.7em;
       padding-top: 0;
       margin: 22px 0;
     }

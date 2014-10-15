@@ -10,7 +10,7 @@ html
     link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
     link(rel='stylesheet', href='stylesheets/styles.css')
   body(ng-app='respTodo')
-    section(id='main', ng-controller='TodoCtrl')
+    section(id='main', ng-controller='TodoCtrl', class="#{!user ? 'auth' : ''}")
       include header
       .content
         block content
