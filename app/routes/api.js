@@ -25,8 +25,7 @@ function isAuthenticated(req, res, next) {
 // ====================================================
 var todosRoute = router.route('/todos');
 todosRoute.get(isAuthenticated, function(req, res) {
-
-  Todo.find(function(err, todos) {
+  Todo.find({ 'user': req.user._id }, function(err, todos) {
     if (err) {
       res.send(err);
     }
@@ -43,6 +42,7 @@ todosRoute.get(isAuthenticated, function(req, res) {
 
   todo.name = req.body.name;
   todo.done = false;
+  todo.user = req.user._id;
 
   todo.save(function(err) {
     if (err) {
