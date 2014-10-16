@@ -36,17 +36,15 @@ $nav-item-color: #FFFFFF;
 $status-all: #D96D32;
 $status-incomplete: #D92042; 
 $status-complete: #2A7D75;
-$status-logout: #2E3066;
-$status-logout: #7F66C9;
 $status-logout: #669DC9;
 
 $msg-warning-background: darken($status-incomplete, 5%);
 $msg-warning-border-color: darken($msg-warning-background, 5%);
 $msg-warning-color: #FFFFFF;
 
-$msg-info-background: #63B27E;
+$msg-info-background: $status-complete;
 $msg-info-border-color: darken($msg-info-background, 25%);
-$msg-info-color: $msg-info-border-color;
+$msg-info-color: #FFFFFF;
 
 $form-input-border-color: $status-all;
 $form-input-icon-color: lighten($status-all, 30%);

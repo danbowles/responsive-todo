@@ -152,7 +152,7 @@ nav:not(.account) {
     
     @media (min-width: $bp-narrow-plus-1) {
       a {
-        padding: 10px 0;
+        padding: 14px 0;
 
         .fa-1x {
           display: inline;
@@ -229,8 +229,15 @@ nav.account {
       text-transform: uppercase;
       text-decoration: none;
       text-align: center;
-      color: $primary-button-color;
+      color: $status-logout;
+      background: #FFFFFF;
       text-shadow: none;
+      transition: all 0.16s ease-in-out;
+      
+      &:hover {
+        color: #FFFFFF;
+        background: $status-logout;
+      }
     }
 
     @media (min-width: $bp-narrow-plus-2) {

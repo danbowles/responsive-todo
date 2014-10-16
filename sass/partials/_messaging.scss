@@ -7,6 +7,7 @@
 
 .msg-info {
   @extend %user-messaging;
+  background: $msg-info-background;
   border-color: $msg-info-border-color;
   color: $msg-info-color;
 }
