@@ -7,7 +7,6 @@ module.exports = function(router, passport) {
   });
 
   router.get('/login', function(req, res) {
-    console.log(req.message.text && {message: req.message});
     res.render('login', req.message.text && {message: req.message});
   });
 

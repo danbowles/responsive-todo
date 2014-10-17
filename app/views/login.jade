@@ -2,6 +2,15 @@ extends layout
 block content
   .narrow
     h2 Login to Your Account
+    p.social-login
+      a(href="#").facebook
+        i.fa.fa-facebook.fa-3x
+      a(href="#").twitter
+        i.fa.fa-twitter.fa-3x
+      a(href="#").google-plus
+        i.fa.fa-google-plus.fa-3x
+    p.or
+      span Or
     if message
       p(class='msg-#{message.type}')
         i.fa(class='fa-#{message.type}')

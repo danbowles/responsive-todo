@@ -21,3 +21,55 @@ form.auth {
     float: right;
   }
 }
+
+p.social-login, p.or {
+  display: none;
+  text-align: center;
+}
+
+p.social-login {
+  a {
+    display: inline-block;
+    background: white;
+    color: red;
+    margin:0 8px;
+    border-radius: 50%;
+    border: 2px solid red;
+    min-width: 52px;
+    padding: 15px;
+    transition: all 0.16s ease-in-out;
+
+    &.facebook {
+      color: #3C599B;
+      border-color: #3C599B;
+
+      &:hover {
+        background: #3C599B;
+        color: #FFFFFF;
+        border-color: darken(#3C599B, 5%);
+      }
+    }
+
+    &.twitter {
+      color: #55ACEE;
+      border-color: #55ACEE;
+
+      &:hover {
+        background: #55ACEE;
+        color: #FFFFFF;
+        border-color: darken(#55ACEE, 5%);
+      }
+    }
+
+    &.google-plus {
+      color: #DD4B39;
+      border-color: #DD4B39;
+
+      &:hover {
+        background: #DD4B39;
+        color: #FFFFFF;
+        border-color: darken(#DD4B39, 5%);
+      }
+    }
+  }
+}

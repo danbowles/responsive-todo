@@ -925,6 +925,58 @@ form.auth .button.secondary {
   float: right;
 }
 
+/* line 25, ../../sass/partials/_forms.scss */
+p.social-login, p.or {
+  display: none;
+  text-align: center;
+}
+
+/* line 31, ../../sass/partials/_forms.scss */
+p.social-login a {
+  display: inline-block;
+  background: white;
+  color: red;
+  margin: 0 8px;
+  border-radius: 50%;
+  border: 2px solid red;
+  min-width: 52px;
+  padding: 15px;
+  transition: all 0.16s ease-in-out;
+}
+/* line 42, ../../sass/partials/_forms.scss */
+p.social-login a.facebook {
+  color: #3C599B;
+  border-color: #3C599B;
+}
+/* line 46, ../../sass/partials/_forms.scss */
+p.social-login a.facebook:hover {
+  background: #3C599B;
+  color: #FFFFFF;
+  border-color: #354e89;
+}
+/* line 53, ../../sass/partials/_forms.scss */
+p.social-login a.twitter {
+  color: #55ACEE;
+  border-color: #55ACEE;
+}
+/* line 57, ../../sass/partials/_forms.scss */
+p.social-login a.twitter:hover {
+  background: #55ACEE;
+  color: #FFFFFF;
+  border-color: #3ea1ec;
+}
+/* line 64, ../../sass/partials/_forms.scss */
+p.social-login a.google-plus {
+  color: #DD4B39;
+  border-color: #DD4B39;
+}
+/* line 68, ../../sass/partials/_forms.scss */
+p.social-login a.google-plus:hover {
+  background: #DD4B39;
+  color: #FFFFFF;
+  border-color: #d73925;
+}
+
 /* line 1, ../../sass/partials/_messaging.scss */
 .msg-warning {
   background: #c31d3b;
