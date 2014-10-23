@@ -55,9 +55,9 @@ app.use('/api', apiRoutes);
 
 app.use(function(req, res, next) {
   res.status(404);
-  res.render('error', {
+  res.render('404', {
     title: '404 - Not Found',
-    message: 'Not Found'
+    message: 'Sorry, I couldn\'t find it'
   });
   return;
 });

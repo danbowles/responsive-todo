@@ -14,5 +14,5 @@ section
             label(for='todo-{{todo._id}}')
         div.modify
           form(ng-submit='finishEditing(todo)', ng-model='editingTodo')
-            input.edit(ng-model='todo.name')
+            input.edit(ng-model='todo.name', todo-focus='todo == editingTodo', ng-blur='finishEditing(todo)', todo-escape='revertEdit(todo)')
           button.delete.fa.fa-trash(class='delete', ng-click='removeTodo(todo)')

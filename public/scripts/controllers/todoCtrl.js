@@ -4,6 +4,8 @@
 
 respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $filter) {
   var todos = [];
+  
+  $scope.editingTodo = null;
 
   $scope.$watch('todos', function(newVal, oldVal) {
     $scope.incompleteCount = $filter('filter')(todos, {done: false}).length;
@@ -16,7 +18,6 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $fil
       '/incomplete': {done: false},
       '/complete': {done: true}
     }[path];
-    $scope.editingTodo = null;
   });
 
 	$http.get('/api/todos')
@@ -29,9 +30,14 @@ respTodo.controller('TodoCtrl', function TodoCtrl($scope, $location, $http, $fil
 
   $scope.editTodo = function(todo) {
     $scope.editingTodo = todo;
-    $scope.originalTodo = todo;
-    // TODO
+    $scope.originalTodo = angular.extend({}, todo);
+    
   };
+
+  $scope.revertEdit = function(todo) {
+    todos[todos.indexOf(todo)] = $scope.originalTodo;
+    $scope.editingTodo = null;
+  }
 
   $scope.finishEditing = function(todo) {
     $scope.editingTodo = null;
