@@ -446,7 +446,7 @@ nav:not(.account) li a {
   color: rgba(0, 0, 0, 0.4);
 }
 /* line 36, ../../sass/partials/_navigation.scss */
-.show-nav .go-to-nav a .fa-bars {
+.showMobileNav .go-to-nav a .fa-bars {
   transform: rotate(90deg);
   color: #FFFFFF;
 }
@@ -478,7 +478,7 @@ nav:not(.account) {
   box-shadow: 0 0 40px;
 }
 /* line 67, ../../sass/partials/_navigation.scss */
-.show-nav nav:not(.account) {
+.showMobileNav nav:not(.account) {
   top: 55px;
 }
 @media (min-width: 37.5em) {
@@ -493,7 +493,7 @@ nav:not(.account) {
     background: #FFFFFF;
   }
   /* line 81, ../../sass/partials/_navigation.scss */
-  .show-nav nav:not(.account) {
+  .showMobileNav nav:not(.account) {
     top: 0px;
   }
 }
@@ -1061,19 +1061,19 @@ body {
   padding-top: 76px;
   transition: padding 0.16s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 131, ../../sass/styles.scss */
-.show-nav #main nav + .title {
-  padding-top: 142px;
-}
-@media (min-width: 37.5em) {
-  /* line 131, ../../sass/styles.scss */
-  .show-nav #main nav + .title {
-    padding-top: 0;
-  }
-}
 @media (min-width: 37.5em) {
   /* line 127, ../../sass/styles.scss */
   #main nav + .title {
+    padding-top: 0;
+  }
+}
+/* line 136, ../../sass/styles.scss */
+#main .showMobileNav nav + .title {
+  padding-top: 142px;
+}
+@media (min-width: 37.5em) {
+  /* line 136, ../../sass/styles.scss */
+  #main .showMobileNav nav + .title {
     padding-top: 0;
   }
 }

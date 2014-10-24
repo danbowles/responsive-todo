@@ -1,4 +1,4 @@
-header
+header(ng-controller="NavCtrl" ng-class='{showMobileNav: showMobileNav}')
   if user
     div#task-entry
       form(ng-submit='createTodo()')
@@ -6,7 +6,7 @@ header
         button.button(type='submit')
           i.fa.fa-plus
           span &nbsp;Add
-    div.go-to-nav
+    div.go-to-nav(ng-click='toggleMobileNav()')
       a(href='#')
         i.fa.fa-bars
     nav

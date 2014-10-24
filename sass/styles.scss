@@ -128,17 +128,17 @@ body {
     padding-top: 76px;
     transition: padding 0.16s $ease-in-cubic;
 
-    .show-nav & {
-      padding-top:142px;
-
-      @media (min-width: $bp-narrow-plus-1) {
-        padding-top: 0;
-      }      
-    }
-
     @media (min-width: $bp-narrow-plus-1) {
       padding-top: 0;
     }
+  }
+
+  .showMobileNav nav + .title {
+    padding-top:142px;
+
+    @media (min-width: $bp-narrow-plus-1) {
+      padding-top: 0;
+    }      
   }
 
   .narrow {
