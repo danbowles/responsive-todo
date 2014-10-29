@@ -27,7 +27,8 @@
     "express-session": "^1.8.2",
     "connect-flash": "^0.1.1",
     "bcrypt-nodejs": "0.0.3",
-    "serve-favicon": "^2.1.5"
+    "serve-favicon": "^2.1.5",
+    "passport-facebook": "^1.0.3"
   },
   "devDependencies": {
     "chai": "^1.9.2",

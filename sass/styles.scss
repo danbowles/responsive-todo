@@ -142,8 +142,13 @@ body {
   }
 
   .narrow {
-    width: 80%;
+    width: 66%;
     margin: 0 auto;
+
+    h2 {
+      text-align: center;
+      color: #444444;
+    }
   }
 }
 

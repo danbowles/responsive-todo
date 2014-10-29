@@ -1,14 +1,17 @@
 extends layout
 block content
   .narrow
-    h2 Login to Your Account
+    h2 Welcome!
     p.social-login
-      a(href="#").facebook
-        i.fa.fa-facebook.fa-3x
-      a(href="#").twitter
-        i.fa.fa-twitter.fa-3x
-      a(href="#").google-plus
-        i.fa.fa-google-plus.fa-3x
+      a(href="/auth/facebook").facebook
+        i.fa.fa-facebook.fa-2x
+        span  Sign in with Facebook
+      //- a(href="#").twitter
+      //-   i.fa.fa-twitter.fa-2x
+      //-   span  Sign in with Twitter
+      //- a(href="#").google-plus
+      //-   i.fa.fa-google-plus.fa-2x
+      //-   span  Sign in with Google
     p.or
       span Or
     if message

@@ -22,53 +22,72 @@ form.auth {
   }
 }
 
-p.social-login, p.or {
-  display: none;
+p.or {
   text-align: center;
+  margin: 2em 0;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    border-bottom: 2px solid #aaaaaa;
+    position: relative;
+    top: 11px;
+  }
+
+  span {
+    font-size: 0.8em;
+    color: #999999;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    position: relative;
+    font-weight: bold;
+    border: solid 2px #aaaaaa;
+  }
+  
 }
 
 p.social-login {
   a {
-    display: inline-block;
-    background: white;
-    color: red;
-    margin:0 8px;
-    border-radius: 50%;
-    border: 2px solid red;
-    min-width: 52px;
-    padding: 15px;
+    display: block;
     transition: all 0.16s ease-in-out;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 8%;
+    margin-bottom: 10px;
+    position: relative;
+
+    span {
+      position: absolute;
+      display: block;
+      width: 84%;
+      text-align: center;
+      top: 33%;
+    }
 
     &.facebook {
-      color: #3C599B;
-      border-color: #3C599B;
+      background: #3C599B;
 
       &:hover {
-        background: #3C599B;
-        color: #FFFFFF;
-        border-color: darken(#3C599B, 5%);
+        background: lighten(#3C599B, 6%);
       }
     }
 
     &.twitter {
-      color: #55ACEE;
-      border-color: #55ACEE;
+      background: #55ACEE;
 
       &:hover {
-        background: #55ACEE;
-        color: #FFFFFF;
-        border-color: darken(#55ACEE, 5%);
+        background: lighten(#55ACEE, 6%);
       }
     }
 
     &.google-plus {
-      color: #DD4B39;
-      border-color: #DD4B39;
+      background: #DD4B39;
 
       &:hover {
-        background: #DD4B39;
-        color: #FFFFFF;
-        border-color: darken(#DD4B39, 5%);
+        background: lighten(#DD4B39, 6%);
       }
     }
   }

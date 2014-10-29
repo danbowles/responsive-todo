@@ -926,55 +926,73 @@ form.auth .button.secondary {
 }
 
 /* line 25, ../../sass/partials/_forms.scss */
-p.social-login, p.or {
-  display: none;
+p.or {
   text-align: center;
+  margin: 2em 0;
+}
+/* line 29, ../../sass/partials/_forms.scss */
+p.or:before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  border-bottom: 2px solid #aaaaaa;
+  position: relative;
+  top: 11px;
+}
+/* line 39, ../../sass/partials/_forms.scss */
+p.or span {
+  font-size: 0.8em;
+  color: #999999;
+  padding: 10px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  position: relative;
+  font-weight: bold;
+  border: solid 2px #aaaaaa;
 }
 
-/* line 31, ../../sass/partials/_forms.scss */
-p.social-login a {
-  display: inline-block;
-  background: white;
-  color: red;
-  margin: 0 8px;
-  border-radius: 50%;
-  border: 2px solid red;
-  min-width: 52px;
-  padding: 15px;
-  transition: all 0.16s ease-in-out;
-}
-/* line 42, ../../sass/partials/_forms.scss */
-p.social-login a.facebook {
-  color: #3C599B;
-  border-color: #3C599B;
-}
-/* line 46, ../../sass/partials/_forms.scss */
-p.social-login a.facebook:hover {
-  background: #3C599B;
-  color: #FFFFFF;
-  border-color: #354e89;
-}
 /* line 53, ../../sass/partials/_forms.scss */
+p.social-login a {
+  display: block;
+  transition: all 0.16s ease-in-out;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 8%;
+  margin-bottom: 10px;
+  position: relative;
+}
+/* line 62, ../../sass/partials/_forms.scss */
+p.social-login a span {
+  position: absolute;
+  display: block;
+  width: 84%;
+  text-align: center;
+  top: 33%;
+}
+/* line 70, ../../sass/partials/_forms.scss */
+p.social-login a.facebook {
+  background: #3C599B;
+}
+/* line 73, ../../sass/partials/_forms.scss */
+p.social-login a.facebook:hover {
+  background: #4566b1;
+}
+/* line 78, ../../sass/partials/_forms.scss */
 p.social-login a.twitter {
-  color: #55ACEE;
-  border-color: #55ACEE;
-}
-/* line 57, ../../sass/partials/_forms.scss */
-p.social-login a.twitter:hover {
   background: #55ACEE;
-  color: #FFFFFF;
-  border-color: #3ea1ec;
 }
-/* line 64, ../../sass/partials/_forms.scss */
+/* line 81, ../../sass/partials/_forms.scss */
+p.social-login a.twitter:hover {
+  background: #71baf1;
+}
+/* line 86, ../../sass/partials/_forms.scss */
 p.social-login a.google-plus {
-  color: #DD4B39;
-  border-color: #DD4B39;
-}
-/* line 68, ../../sass/partials/_forms.scss */
-p.social-login a.google-plus:hover {
   background: #DD4B39;
-  color: #FFFFFF;
-  border-color: #d73925;
+}
+/* line 89, ../../sass/partials/_forms.scss */
+p.social-login a.google-plus:hover {
+  background: #e16353;
 }
 
 /* line 1, ../../sass/partials/_messaging.scss */
@@ -1079,20 +1097,25 @@ body {
 }
 /* line 144, ../../sass/styles.scss */
 #main .narrow {
-  width: 80%;
+  width: 66%;
   margin: 0 auto;
 }
+/* line 148, ../../sass/styles.scss */
+#main .narrow h2 {
+  text-align: center;
+  color: #444444;
+}
 
-/* line 154, ../../sass/styles.scss */
+/* line 159, ../../sass/styles.scss */
 footer {
   padding: 20px 0 0;
   text-align: center;
 }
-/* line 158, ../../sass/styles.scss */
+/* line 163, ../../sass/styles.scss */
 footer p {
   margin: 0;
 }
-/* line 162, ../../sass/styles.scss */
+/* line 167, ../../sass/styles.scss */
 footer a {
   color: #2a7d75;
 }
