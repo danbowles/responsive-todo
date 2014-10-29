@@ -2,7 +2,7 @@ header(ng-controller="NavCtrl" ng-class='{showMobileNav: showMobileNav}')
   if user
     div#task-entry
       form(ng-submit='createTodo()')
-        input(type='text', ng-model='newTodo', placeholder='Almost forgot to...', autofocus)
+        input(type='text', ng-model='$parent.newTodo', placeholder='Almost forgot to...', autofocus)
         button.button(type='submit')
           i.fa.fa-plus
           span &nbsp;Add

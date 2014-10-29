@@ -18,8 +18,8 @@ module.exports = function(router, passport) {
 
   router.get('/logout', function(req, res) {
     req.logout();
-    req.flash('type', 'info');
-    req.flash('message', 'Thanks for hanging out!');
+    // req.flash('type', 'info');
+    // req.flash('message', 'Thanks for hanging out!');
     res.redirect('/login');
   });
 
